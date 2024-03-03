@@ -1,0 +1,51 @@
+    .container {
+      margin-top: 50px;
+    }
+
+    .text {
+      padding: 20px;
+      font-size: 18px;
+      width: 85%;
+      align-items: center;
+      text-align: left;
+    }
+    
+    .text p, h2 {
+      margin-top: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 64px; /* Större storlek */
+      font-weight: bold; /* Fetare */
+      color: red;
+      margin: 50px 0px;
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('path/to/Roboto-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Exo';
+      src: url('path/to/Exo-Regular.ttf') format('truetype');
+    }
+
+    .navbar {
+      background-color: red !important;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      margin: 0px 40px;
+      font-size: 20px;
+      font-family: 'Roboto', 'Exo', sans-serif;
+      font-style: italic;
+      transition: 1s;
+    }
+
+    .navbar a:hover {
+      color: #444;
+    }

@@ -8,51 +8,7 @@
   <link rel="stylesheet" type="text/css" href="grund.css">
   <style type="text/css">
 
-      .container {
-        margin-top: 50px;
-      }
 
-      .text {
-        padding: 20px;
-        font-size: 18px;
-        width: 85%;
-        align-items: center;
-        text-align: left;
-      }
-      .text p, h2 {
-        margin-top: 40px;
-      }
-      .navbar a {
-        text-decoration: none;
-        color: white;
-        margin: auto;
-        font-size: 20px;
-        font-family: 'Roboto', 'Exo', sans-serif;
-        font-style: italic;
-        transition: 1s;
-      }
-
-      .navbar a:hover {
-        color: #444;
-      }
-
-        @font-face {
-          font-family: 'Roboto';
-          src: url('path/to/Roboto-Regular.ttf') format('truetype');
-        }
-
-        @font-face {
-          font-family: 'Exo';
-          src: url('path/to/Exo-Regular.ttf') format('truetype');
-        }
-
-      
-      .navbar.bg {
-        background-color: red; !important;
-      }
-
-
-      /* Nytt */
       .article-container {
         display: flex;
         flex-wrap: wrap;
@@ -180,19 +136,43 @@
         margin-right: 5px;
       }
 
+      .teams-section {
+
+      }
+
   </style>
 </head>
 <body>
-    <center>
-        <nav class="navbar navbar-expand-sm bg navbar-dark">
-            <a class="navbar-brand" href="index.html">
-            <img src="logo.png" alt="Logo" style="width: 100px;">
-            </a>
-            <a href="index.html">Start</a>
-            <a href="teams.html">Teams</a>
-            <a href="drivers.html">Drivers</a>
-            <a href="video.html">Video</a>
-        </nav>
+<center>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Logo -->
+  <a class="navbar-brand" href="#">
+    <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
+  </a>
+
+  <!-- Toggler/collapsible Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Start</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="teams.html">Teams</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="drivers.html">Drivers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="video.html">Video</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     
         <h1 style="color: red; margin: 40px 0px;">Welcome to F1 Fantasy 2024!</h1>
 
@@ -337,10 +317,12 @@
 
     </div>
 
+
 <p style="margin-top: 50px; color: red;">© 2024 F1 Fantasy | Offical F1 Fantasy Game</p>
 
 </center>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
