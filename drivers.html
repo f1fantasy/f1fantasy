@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>F1Fantasy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="grund.css">
+  <style type="text/css">
+
+        .container {
+        margin-top: 50px;
+        }
+
+        .text {
+        padding: 20px;
+        font-size: 18px;
+        width: 85%;
+        align-items: center;
+        text-align: left;
+        }
+        .text p, h2 {
+        margin-top: 40px;
+        }
+        .navbar a {
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        font-size: 20px;
+        font-family: 'Roboto', 'Exo', sans-serif;
+        font-style: italic;
+        transition: 1s;
+        }
+
+        .navbar a:hover {
+        color: #444;
+        }
+
+        @font-face {
+          font-family: 'Roboto';
+          src: url('path/to/Roboto-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+          font-family: 'Exo';
+          src: url('path/to/Exo-Regular.ttf') format('truetype');
+        }
+
+        .header {
+            background-color: red;
+            width: auto;
+            border-radius: 50px;
+            height: 80px;
+            margin: 50px 20px;
+            display: grid;
+            place-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Roboto', 'Exo', sans-serif;
+            font-style: italic;
+            font-size: 38px;
+            color: white;
+        }
+
+
+        .navbar.bg {
+        background-color: red; !important;
+        }
+
+        .driver-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 80%;
+            margin-bottom: 50px;
+        }
+
+        .driver-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            border: solid red 3px;
+            margin: auto;
+        }
+
+        .driver-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .driver-info {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            height: 200px;
+        }
+
+        .driver-name {
+            font-weight: bold;
+        }
+
+
+
+  </style>
+</head>
+<body>
+    <center>
+        <nav class="navbar navbar-expand-sm bg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+            <img src="logo.png" alt="Logo" style="width: 100px;">
+            </a>
+            <a href="index.html">Start</a>
+            <a href="teams.html">Teams</a>
+            <a href="drivers.html">Drivers</a>
+            <a href="video.html">Video</a>
+            <a href="info.html">Info</a>
+        </nav>
+
+    <div class="header">
+        <h1>F1 2024 Drivers:</h1>
+    </div>
+
+    <div class="driver-menu">
+        <div class="driver-item" style="background: darkblue;">
+            <img class="driver-image" src="drivers/verstappen.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Max Verstappen 1</p>
+                <p>Team: Red Bull Racing</p>
+                <p>Country: Netherlands</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+
+        <div class="driver-item" style="background: darkblue;">
+            <img class="driver-image" src="drivers/perez.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Sergio Perez 11</p>
+                <p>Team: Red Bull Racing</p>
+                <p>Country: Mexico</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: turquoise;">
+            <img class="driver-image" src="drivers/russell.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">George Russell 63</p>
+                <p>Team: Mercedes</p>
+                <p>Country: United Kingdom</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: turquoise;">
+            <img class="driver-image" src="drivers/hamilton.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Lewis Hamilton 44</p>
+                <p>Team: Mercedes</p>
+                <p>Country: United Kingdom</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="driver-menu">
+
+        <div class="driver-item" style="background: #FF4D4D;">
+            <img class="driver-image" src="drivers/leclerc.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Charles Leclerc 16</p>
+                <p>Team: Ferrari</p>
+                <p>Country: Monaco</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #FF4D4D;">
+            <img class="driver-image" src="drivers/sainz.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Carlos Sainz 55</p>
+                <p>Team: Ferrari</p>
+                <p>Country: Spain</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: orange;">
+            <img class="driver-image" src="drivers/piastri.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Oscar Piastri 81</p>
+                <p>Team: McLaren</p>
+                <p>Country: Australia</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: orange;">
+            <img class="driver-image" src="drivers/norris.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Lando Norris 4</p>
+                <p>Team: McLaren</p>
+                <p>Country: United Kingdom</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+        <div class="driver-menu">
+
+        <div class="driver-item" style="background: #26905B;">
+            <img class="driver-image" src="drivers/stroll.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Lance Stroll 18</p>
+                <p>Team: Aston Martin</p>
+                <p>Country: Canada</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #26905B;">
+            <img class="driver-image" src="drivers/alonso.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Fernando Alonso 14</p>
+                <p>Team: Aston Martin</p>
+                <p>Country: Spain</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #2661BA;">
+            <img class="driver-image" src="drivers/ocon.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Esteban Ocon 31</p>
+                <p>Team: Alpine</p>
+                <p>Country: France</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #2661BA;">
+            <img class="driver-image" src="drivers/gasly.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Pierre Gasly 10</p>
+                <p>Team: Alpine</p>
+                <p>Country: France</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="driver-menu">
+
+        <div class="driver-item" style="background: #22205B;">
+            <img class="driver-image" src="drivers/albon.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Alexander Albon 23</p>
+                <p>Team: Williams</p>
+                <p>Country: Thailand</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #22205B;">
+            <img class="driver-image" src="drivers/sargent.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Logan Sargent 2</p>
+                <p>Team: Williams</p>
+                <p>Country: USA</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #E4E4E4;">
+            <img class="driver-image" src="drivers/ricciardo.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Daniel Ricciardo 3</p>
+                <p>Team: RB</p>
+                <p>Country: Australia</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #E4E4E4;">
+            <img class="driver-image" src="drivers/tsunoda.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Yuki Tsunoda 22</p>
+                <p>Team: RB</p>
+                <p>Country: Japan</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+        
+    </div>
+
+        <div class="driver-menu">
+
+        <div class="driver-item" style="background: #A7FF68;">
+            <img class="driver-image" src="drivers/bottas.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Valtteri Bottas 77</p>
+                <p>Team: Kick Sauber</p>
+                <p>Country: Finland</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: #A7FF68;">
+            <img class="driver-image" src="drivers/zhou.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">GUANYU ZHOU 24</p>
+                <p>Team: Kick Sauber</p>
+                <p>Country: China</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: gray;">
+            <img class="driver-image" src="drivers/magnussen.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Kevin Magnussen 20</p>
+                <p>Team: Haas F1 Team</p>
+                <p>Country: Danmark</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+
+        <div class="driver-item" style="background: gray;">
+            <img class="driver-image" src="drivers/hulkenberg.jpg" alt="Max Verstappen">
+            <div class="driver-info">
+                <p class="driver-name">Nico Hulkenberg 27</p>
+                <p>Team: Haas F1 Team</p>
+                <p>Country: Germany</p>
+                <p>Price: 0$</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <p style="margin-top: 50px; color: red;">© 2024 F1 Fantasy | Offical F1 Fantasy Game</p>
+
+    </center>
+
+</body>
+</html>

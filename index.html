@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>F1Fantasy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="grund.css">
+  <style type="text/css">
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .text {
+        padding: 20px;
+        font-size: 18px;
+        width: 85%;
+        align-items: center;
+        text-align: left;
+      }
+      .text p, h2 {
+        margin-top: 40px;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        font-size: 20px;
+        font-family: 'Roboto', 'Exo', sans-serif;
+        font-style: italic;
+        transition: 1s;
+      }
+
+      .navbar a:hover {
+        color: #444;
+      }
+
+        @font-face {
+          font-family: 'Roboto';
+          src: url('path/to/Roboto-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+          font-family: 'Exo';
+          src: url('path/to/Exo-Regular.ttf') format('truetype');
+        }
+
+      
+      .navbar.bg {
+        background-color: red; !important;
+      }
+
+
+      /* Nytt */
+      .article-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .article-group {
+        width: 45%;
+      }
+
+      .article {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ff4d4d; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.6s ease;
+        overflow: hidden;
+      }
+
+      .article:hover {
+        background-color: #e60000; 
+      }
+
+      .article h2 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .article p {
+        color: white;
+      }
+
+      .article a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .article a:hover {
+        text-decoration: underline;
+      }
+
+      .article::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -30px;
+        width: 60px;
+        height: 100%;
+        background-color: white;
+        transform: skewX(-20deg);
+        z-index: 1;
+      }
+
+      .driver-standings {
+        margin-top: 40px;
+        background-color: #f9f9f9; 
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid #e60000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+
+      .driver {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .position {
+        width: 30px;
+        height: 30px;
+        background-color: #e60000; 
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .driver-name {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .driver-name h4 {
+        margin: 0;
+        padding-left: 10px;
+      }
+
+      .team-name {
+        color: gray;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+
+      .driver-divider {
+        width: 6px;
+        height: 100%;
+        background-color: #e60000; 
+        margin-right: 10px;
+      }
+
+      .block-colors {
+        width: 4px;
+        height: 18px;
+        margin-right: 10px;
+      }
+
+      .team-logo {
+        width: 20px;
+        height: 20px;
+        background-color: gray;
+        margin-right: 5px;
+      }
+
+  </style>
+</head>
+<body>
+    <center>
+        <nav class="navbar navbar-expand-sm bg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+            <img src="logo.png" alt="Logo" style="width: 100px;">
+            </a>
+            <a href="index.html">Start</a>
+            <a href="teams.html">Teams</a>
+            <a href="drivers.html">Drivers</a>
+            <a href="video.html">Video</a>
+            <a href="info.html">Info</a>
+        </nav>
+    
+        <h1 style="color: red; margin: 40px 0px;">Welcome to F1 Fantasy 2024!</h1>
+
+        <hr style="margin-bottom: 40px; background: red; width: 5%;">
+
+
+    <div class="article-container">
+        <div class="article-group">
+            <article class="article">
+                <h2>Team Information</h2>
+                <p>Learn more about the F1 Fantasy teams.</p>
+                <a href="teams.html">Read More</a>
+            </article>
+
+            <article class="article">
+                <h2>Driver Profiles</h2>
+                <p>Explore profiles and prices of F1 drivers.</p>
+                <a href="drivers.html">Read More</a>
+            </article>
+        </div>
+
+        <div class="article-group">
+            <article class="article">
+                <h2>F1 Clips</h2>
+                <p>Stay updated with the latest F1 Clips and Highlights.</p>
+                <a href="clips.html">Read More</a>
+            </article>
+
+            <article class="article">
+                <h2>Event Schedule</h2>
+                <p>Check out the F1 event schedule.</p>
+                <a href="schedule.html">Read More</a>
+            </article>
+        </div>
+    </div>
+
+    <hr style="margin: 50px 0px; background: red; width: 30%;">
+
+    <h2 style="color: red;">2024 Fantasy Driver Standings</h2>
+    <h5 style="color: red;">Top 10:</h5>
+
+    <div class="driver-standings">
+        <div class="driver">
+            <div class="position">1</div>
+            <div class="block-colors" style="background: darkblue;"></div>
+            <div class="driver-name">
+                <h4>Max Verstappen</h4>
+                <span class="team-name">(Red Bull Racing)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+        <div class="driver">
+            <div class="position">2</div>
+            <div class="block-colors" style="background: orange;"></div>
+            <div class="driver-name">
+                <h4>Lando Norris</h4>
+                <span class="team-name">(McLaren)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+        <div class="driver">
+            <div class="position">3</div>
+            <div class="block-colors" style="background: darkblue;"></div>
+            <div class="driver-name">
+                <h4>Sergio Perez</h4>
+                <span class="team-name">(Red Bull Racing)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">4</div>
+            <div class="block-colors" style="background: #FF4D4D;"></div>
+            <div class="driver-name">
+                <h4>Charles Leclerc</h4>
+                <span class="team-name">(Ferrari)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">5</div>
+            <div class="block-colors" style="background: turquoise;"></div>
+            <div class="driver-name">
+                <h4>Lewis Hamilton</h4>
+                <span class="team-name">(Mercedes)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">6</div>
+            <div class="block-colors" style="background: turquoise;"></div>
+            <div class="driver-name">
+                <h4>George Russell</h4>
+                <span class="team-name">(Mercedes)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">7</div>
+            <div class="block-colors" style="background: orange;"></div>
+            <div class="driver-name">
+                <h4>Oscar Piastri </h4>
+                <span class="team-name">(McLaren)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">8</div>
+            <div class="block-colors" style="background: #FF4D4D;"></div>
+            <div class="driver-name">
+                <h4>Carlos Sainz</h4>
+                <span class="team-name">(Ferrari)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">9</div>
+            <div class="block-colors" style="background: #26905B;"></div>
+            <div class="driver-name">
+                <h4>Fernando Alonso</h4>
+                <span class="team-name">(Aston Martin)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        <div class="driver">
+            <div class="position">10</div>
+            <div class="block-colors" style="background: #26905B;"></div>
+            <div class="driver-name">
+                <h4>Lance Stroll</h4>
+                <span class="team-name">(Aston Martin)</span>
+            </div>
+            <div class="driver-divider"></div>
+        </div>
+
+        
+
+    </div>
+
+<p style="margin-top: 50px; color: red;">© 2024 F1 Fantasy | Offical F1 Fantasy Game</p>
+
+</center>
+
+
+</body>
+</html>
