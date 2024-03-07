@@ -49,3 +49,12 @@
     .navbar a:hover {
       color: #444;
     }
+
+    .dropdown-menu {
+      color: white; !important;
+      background-color: red;
+    }
+
+    .dropdown-item:hover {
+      background-color: transparent;
+    }
