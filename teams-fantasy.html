@@ -8,6 +8,132 @@
   <link rel="stylesheet" type="text/css" href="grund.css">
   <style type="text/css">
 
+    .team-card {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: border-color 0.3s ease;
+    }
+
+    .team-card:hover {
+        border-color: #007bff;
+    }
+
+    .team-card h6 {
+        font-size: 2rem;
+        color: #222;
+        margin-bottom: 15px;
+        border-bottom: 3px solid #222;
+        padding-bottom: 10px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    .team-card h6 .block-colors {
+        margin-right: 10px;
+    }
+
+    .team-card .block-colors {
+        width: 6px;
+        height: 26px;
+        margin-top: 4px;
+        margin-right: 10px;
+    }
+
+    .team-card p {
+        font-size: 1.4rem;
+        color: #222;
+        margin-bottom: 15px;
+    }
+
+    .team-card ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .team-card ul li {
+        font-size: 1.4rem;
+        color: #222;
+        margin-bottom: 5px;
+    }
+
+    .team-card .driver-names {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .team-card .driver-names .driver1,
+    .team-card .driver-names .driver2 {
+        width: 48%;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #222;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .team-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .team-card {
+      border: solid transparent 3px;
+      transition: 0.8s;
+    }
+
+    .redbull:hover {
+      border: solid darkblue 3px;
+    }
+
+    .ferrari:hover {
+      border: solid red 3px;
+    }
+
+    .mercedes:hover {
+      border: solid turquoise 3px;
+    }
+
+    .mclaren:hover {
+      border: solid orange 3px;
+    }
+
+    .astonmartin:hover {
+      border: solid #26905B 3px;
+    }
+
+    .kicksauber:hover {
+      border: solid #A7FF68 3px;
+    }
+
+    .haas:hover {
+      border: solid gray 3px;
+    }
+
+    .rb:hover {
+      border: solid royalblue 3px;
+    }
+
+    .williams:hover {
+      border: solid skyblue 3px;
+    }
+
+    .alpine:hover {
+      border: solid hotpink 3px;
+    }
+
+
+    .block-colors {
+      width: 6px;
+      height: 24px;
+      margin-right: 10px;
+    }
 
   </style>
 </head>
@@ -49,6 +175,48 @@
   </div>
 </nav>
 
+
+<div class="container" style="margin-top: 60px;">
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="team-card ferrari">
+                <div class="team-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6><div class="block-colors" style="background: red;"></div>Blixten McQueen Racing</h6>
+                            <div class="driver-names">
+                                <div class="driver1">Max Verstappen, $40M</div>
+                                <div class="driver2">George Russell, $24M</div>
+                                <div class="driver1">Carlos Sainz, $20M</div>
+                                <div class="driver2">Fernando Alonso, $16M</div>
+                            </div>
+                            <img src="blixten.jpg" alt="Redbull Car">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="col-md-6 mb-4">
+              <div class="team-card alpine">
+                  <div class="team-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h6><div class="block-colors" style="background: hotpink;"></div>Per i Viken</h6>
+                              <div class="driver-names">
+                                  <div class="driver1">Max Verstappen, $40M</div>
+                                  <div class="driver2">Carlos Sainz, $20M</div>
+                                  <div class="driver1">Fernando Alonso, $16M</div>
+                                  <div class="driver2">Oscar Piastri, $22M</div>
+                              </div>
+                              <img src="zundapp.jpg" height="245px" alt="Mercedes Car">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
         <p style="margin-top: 50px; color: red;">© 2024 F1 Fantasy | Offical F1 Fantasy Game</p>
