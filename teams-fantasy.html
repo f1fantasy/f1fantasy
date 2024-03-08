@@ -36,13 +36,6 @@
         margin-right: 10px;
     }
 
-    .team-card .block-colors {
-        width: 6px;
-        height: 26px;
-        margin-top: 4px;
-        margin-right: 10px;
-    }
-
     .team-card p {
         font-size: 1.4rem;
         color: #222;
@@ -62,12 +55,11 @@
 
     .team-card .driver-names {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column; /* Change to column layout */
     }
 
-    .team-card .driver-names .driver1,
-    .team-card .driver-names .driver2 {
-        width: 48%;
+    .team-card .driver-names .driver {
+        width: 100%; /* Occupy full width */
         font-size: 1.2rem;
         font-weight: bold;
         background-color: #222;
@@ -75,6 +67,7 @@
         padding: 10px 15px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 10px; /* Add margin between drivers */
     }
 
     .team-card img {
@@ -86,6 +79,11 @@
     .team-card {
       border: solid transparent 3px;
       transition: 0.8s;
+    }
+
+    /* Hover styles for different teams */
+    .team-card:hover {
+      border: solid darkblue 3px;
     }
 
     .redbull:hover {
@@ -186,10 +184,10 @@
                         <div class="col-md-12">
                             <h6><div class="block-colors" style="background: red;"></div>Blixten McQueen Racing</h6>
                             <div class="driver-names">
-                                <div class="driver1">Max Verstappen, $40M</div>
-                                <div class="driver2">George Russell, $24M</div>
-                                <div class="driver1">Carlos Sainz, $20M</div>
-                                <div class="driver2">Fernando Alonso, $16M</div>
+                                <div class="driver">Max Verstappen, $40M</div>
+                                <div class="driver">George Russell, $24M</div>
+                                <div class="driver">Carlos Sainz, $20M</div>
+                                <div class="driver">Fernando Alonso, $16M</div>
                             </div>
                             <img src="blixten.jpg" alt="Redbull Car">
                         </div>
@@ -204,10 +202,10 @@
                           <div class="col-md-12">
                               <h6><div class="block-colors" style="background: hotpink;"></div>Per i Viken</h6>
                               <div class="driver-names">
-                                  <div class="driver1">Max Verstappen, $40M</div>
-                                  <div class="driver2">Carlos Sainz, $20M</div>
-                                  <div class="driver1">Fernando Alonso, $16M</div>
-                                  <div class="driver2">Oscar Piastri, $22M</div>
+                                  <div class="driver">Max Verstappen, $40M</div>
+                                  <div class="driver">Carlos Sainz, $20M</div>
+                                  <div class="driver">Fernando Alonso, $16M</div>
+                                  <div class="driver">Oscar Piastri, $22M</div>
                               </div>
                               <img src="zundapp.jpg" height="245px" alt="Mercedes Car">
                           </div>
