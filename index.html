@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="grund.css">
   <style type="text/css">
 
@@ -172,6 +173,47 @@
       border: none;
     }
 
+    .countdown-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      color: red;
+    }
+
+    .h1-countdown {
+      color: red;
+      font-size: 55px;
+      margin-top: 20px;
+      margin-left: 40px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .h1-countdown {
+        text-align: center;
+        margin-left: 0px;
+      }
+
+      .countdown-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .countdown-border {
+        border: solid red 10px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -212,6 +254,34 @@
     </ul>
   </div>
 </nav>
+
+  <div class="container mt-5 countdown-border">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="h1-countdown mb-4">AUSTRALIA 2024</h1>
+      </div>
+      <div class="col-md-6">
+        <div id="countdown" class="countdown-container">
+          <div class="countdown-item">
+            <span id="days" class="display-4 fw-bold">0</span>
+            <span class="text-muted">Dagar</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="display-4 fw-bold">0</span>
+            <span class="text-muted">Timmar</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="display-4 fw-bold">0</span>
+            <span class="text-muted">Minuter</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="display-4 fw-bold">0</span>
+            <span class="text-muted">Sekunder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     
         <h1 style="color: red; margin: 40px 0px;">Welcome to F1 Fantasy 2024!</h1>
 
@@ -256,24 +326,24 @@
       <img class="question-img" src="question1.jpg" alt="Question 1">
       <div class="card-body">
         <h5 class="card-title">Question 1:</h5>
-        <p class="card-text">What is the fastest lap time at Jeddah?</p>
+        <p class="card-text">What is the fastest lap time at Melbournes?</p>
         <form id="quizForm1">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question1" id="q1a" value="optionA">
             <label class="form-check-label" for="q1a">
-              A: 1:30.734
+              A: 1:18.486
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question1" id="q1b" value="optionB">
             <label class="form-check-label" for="q1b">
-              B: 1:42.711
+              B: 1:26.129
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question1" id="q1c" value="optionC">
             <label class="form-check-label" for="q1c">
-              C: 1:36.544
+              C: 1:20.235
             </label>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="checkAnswer(1)">Lock Answer</button>
@@ -288,24 +358,24 @@
       <img class="question-img" src="question2.jpg" alt="Question 2">
       <div class="card-body">
         <h5 class="card-title">Question 2:</h5>
-        <p class="card-text">In what year was Jeddah presented to the F1?</p>
+        <p class="card-text">In what year was Melbourne presented to the F1?</p>
         <form id="quizForm2">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question2" id="q2a" value="optionA">
             <label class="form-check-label" for="q2a">
-              A: 2018
+              A: 1992
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question2" id="q2b" value="optionB">
             <label class="form-check-label" for="q2b">
-              B: 2021
+              B: 1996
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question2" id="q2c" value="optionC">
             <label class="form-check-label" for="q2c">
-              C: 2014
+              C: 1999
             </label>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="checkAnswer(2)">Lock Answer</button>
@@ -320,24 +390,24 @@
       <img class="question-img" src="question3.jpg" alt="Question 3">
       <div class="card-body">
         <h5 class="card-title">Question 3:</h5>
-        <p class="card-text">How man laps are Jeddah?</p>
+        <p class="card-text">How man laps are Melbourne?</p>
         <form id="quizForm3">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question3" id="q3a" value="optionA">
             <label class="form-check-label" for="q3a">
-              A: 50 laps
+              A: 62 laps
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question3" id="q3b" value="optionB">
             <label class="form-check-label" for="q3b">
-              B: 45 laps
+              B: 58 laps
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question3" id="q3c" value="optionC">
             <label class="form-check-label" for="q3c">
-              C: 55 laps
+              C: 54 laps
             </label>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="checkAnswer(3)">Lock Answer</button>
@@ -352,7 +422,7 @@
       <img class="question-img" src="question4.jpg" alt="Question 4">
       <div class="card-body">
         <h5 class="card-title">Question 4:</h5>
-        <p class="card-text">Who won in Jeddah last year?</p>
+        <p class="card-text">Who won in Melbourne last year?</p>
         <form id="quizForm4">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question4" id="q4a" value="optionA">
@@ -369,7 +439,7 @@
           <div class="form-check">
             <input class="form-check-input" type="radio" name="question4" id="q4c" value="optionC">
             <label class="form-check-label" for="q4c">
-              C: Fernando Alonso
+              C: Lewis Hamiltion
             </label>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="checkAnswer(4)">Lock Answer</button>
@@ -497,35 +567,73 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    function checkAnswer(questionNumber) {
-      var selectedOption = document.querySelector('input[name="question' + questionNumber + '"]:checked');
-      if (selectedOption) {
-        var selectedValue = selectedOption.value;
-        var correctAnswerId = "correctAnswer" + questionNumber;
-        var incorrectAnswerId = "incorrectAnswer" + questionNumber;
+<script>
+function checkAnswer(questionNumber) {
+  var selectedOption = document.querySelector('input[name="question' + questionNumber + '"]:checked');
+  if (selectedOption) {
+    var selectedValue = selectedOption.value;
+    var correctAnswerId = "correctAnswer" + questionNumber;
+    var incorrectAnswerId = "incorrectAnswer" + questionNumber;
 
-        if (selectedValue === "optionA" && questionNumber % 2 !== 0) {
-          document.getElementById(correctAnswerId).style.display = "block";
-        } else if (selectedValue === "optionB" && questionNumber % 2 === 0) {
-          document.getElementById(correctAnswerId).style.display = "block";
-        } else {
-          document.getElementById(incorrectAnswerId).style.display = "block";
-        }
-
-        var currentQuestionId = "question" + questionNumber;
-        var nextQuestionId = "question" + (questionNumber + 1);
-
-        document.getElementById(currentQuestionId).style.opacity = "0"; // Fade out current question
-        setTimeout(function() {
-          document.getElementById(currentQuestionId).style.display = "none"; // Hide current question
-          document.getElementById(nextQuestionId).style.display = "block"; // Show next question
-          document.getElementById(nextQuestionId).style.opacity = "1"; // Fade in next question
-        }, 600); // Adjust the time as needed for the animation
-      } else {
-        alert("Please select an option.");
-      }
+    if (questionNumber === 1 && selectedValue === "optionC") {
+      document.getElementById(correctAnswerId).style.display = "block";
+    } else if (questionNumber === 2 && selectedValue === "optionB") {
+      document.getElementById(correctAnswerId).style.display = "block";
+    } else if (questionNumber === 3 && selectedValue === "optionB") {
+      document.getElementById(correctAnswerId).style.display = "block";
+    } else if (questionNumber === 4 && selectedValue === "optionA") {
+      document.getElementById(correctAnswerId).style.display = "block";
+    } else {
+      document.getElementById(incorrectAnswerId).style.display = "block";
     }
+
+    var currentQuestionId = "question" + questionNumber;
+    var nextQuestionId = "question" + (questionNumber + 1);
+
+    document.getElementById(currentQuestionId).style.opacity = "0"; // Fade out current question
+    setTimeout(function() {
+      document.getElementById(currentQuestionId).style.display = "none"; // Hide current question
+      document.getElementById(nextQuestionId).style.display = "block"; // Show next question
+      setTimeout(function() {
+        document.getElementById(nextQuestionId).style.opacity = "1"; // Fade in next question
+      }, 50); // Delay to ensure smooth transition
+    }, 600); // Adjust the time as needed for the animation
+  } else {
+    alert("Please select an option.");
+  }
+}
+</script>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Mar 24, 2024 05:00:00").getTime();
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+
+      // Get the current date and time
+      var now = new Date().getTime();
+
+      // Calculate the time remaining
+      var distance = countDownDate - now;
+
+      // Calculate days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "<h2>EXPIRED</h2>";
+      }
+    }, 1000);
   </script>
 
 </body>
