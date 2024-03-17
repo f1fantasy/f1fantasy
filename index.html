@@ -69,74 +69,6 @@
         z-index: 1;
       }
 
-      .driver-standings {
-        margin-top: 40px;
-        background-color: #f9f9f9; 
-        padding: 20px;
-        border-radius: 10px;
-        border: 2px solid #e60000;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-      }
-
-      .driver {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .position {
-        width: 35px;
-        height: 35px;
-        background-color: #e60000; 
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-
-      .driver-name {
-        display: flex;
-        align-items: center;
-        position: relative;
-      }
-
-      .driver-name h4 {
-        margin: 0;
-        padding-left: 10px;
-      }
-
-      .team-name {
-        color: gray;
-        font-size: 14px;
-        margin-left: 10px;
-      }
-
-      .driver-divider {
-        width: 6px;
-        height: 100%;
-        background-color: #e60000; 
-        margin-right: 10px;
-      }
-
-      .block-colors {
-        width: 4px;
-        height: 18px;
-        margin-right: 10px;
-      }
-
-      .team-logo {
-        width: 20px;
-        height: 20px;
-        background-color: gray;
-        margin-right: 5px;
-      }
-
 
     .card {
       max-width: 400px;
@@ -147,9 +79,8 @@
     }
 
     .quiz-section {
-      padding: 50px 0;
       background-color: #fff;
-      border-radius: 10px;
+      margin: 40px;
     }
 
     .question-img {
@@ -212,6 +143,20 @@
         border: solid red 10px;
         border-radius: 20px;
         padding: 20px;
+    }
+
+    tr {
+      transition: 1s;
+      border-radius: 15px !important;
+    }
+
+    tr:hover {
+      background-color: #333 !important;
+      color: #fff;
+    }
+
+    tr:hover td {
+      color: #fff !important;
     }
 
   </style>
@@ -452,60 +397,45 @@
       <hr style="margin: 50px 0px; background: red; width: 30%;">
 
 
-    <h2 style="color: red;">2024 Fantasy Driver Standings</h2>
-    <h5 style="color: red;">Top 5:</h5>
-
-    <div class="driver-standings">
-        <div class="driver">
-            <div class="position">1</div>
-            <div class="block-colors" style="background: darkblue;"></div>
-            <div class="driver-name">
-                <h4>Max Verstappen 25p</h4>
-                <span class="team-name">(Red Bull Racing)</span>
-            </div>
-            <div class="driver-divider"></div>
-        </div>
-
-        <div class="driver">
-            <div class="position">2</div>
-            <div class="block-colors" style="background: #FF4D4D;"></div>
-            <div class="driver-name">
-                <h4>Charles Leclerc 19p</h4>
-                <span class="team-name">(Ferrari)</span>
-            </div>
-            <div class="driver-divider"></div>
-        </div>
-
-        <div class="driver">
-            <div class="position">3</div>
-            <div class="block-colors" style="background: darkblue;"></div>
-            <div class="driver-name">
-                <h4>Sergio Perez 18p</h4>
-                <span class="team-name">(Red Bull Racing)</span>
-            </div>
-            <div class="driver-divider"></div>
-        </div>
-
-        <div class="driver">
-            <div class="position">4</div>
-            <div class="block-colors" style="background: orange;"></div>
-            <div class="driver-name">
-                <h4>Oscar Piastri 12p</h4>
-                <span class="team-name">(McLaren)</span>
-            </div>
-            <div class="driver-divider"></div>
-        </div>
-
-        <div class="driver">
-            <div class="position">5</div>
-            <div class="block-colors" style="background: #26905B;"></div>
-            <div class="driver-name">
-                <h4>Fernando Alonso 10p</h4>
-                <span class="team-name">(Aston Martin)</span>
-            </div>
-            <div class="driver-divider"></div>
-        </div>
-
+    <div class="container">
+      <h2>Driver Standings 2024</h2>
+      <p>Top 5:</p>            
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. Max Verstappen</td>
+            <td>Redbull</td>
+            <td>25p</td>
+          </tr>
+          <tr>
+            <td>2. Charles Leclerc</td>
+            <td>Ferrari</td>
+            <td>19p</td>
+          </tr>
+          <tr>
+            <td>3. Sergio Perez</td>
+            <td>Redbull</td>
+            <td>18p</td>
+          </tr>
+          <tr>
+            <td>4. Oscar Piastri</td>
+            <td>McLaren</td>
+            <td>12p</td>
+          </tr>
+          <tr>
+            <td>5. Fernando Alonso</td>
+            <td>Aston Martin</td>
+            <td>10p</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
 
