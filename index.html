@@ -150,7 +150,7 @@
     }
 
     tr:hover {
-      background-color: #333 !important;
+      background-color: red !important;
       color: #fff;
     }
 
@@ -402,40 +402,17 @@
     <div class="container">
       <h2>Driver Standings 2024</h2>
       <p>Top 5:</p>            
-      <table class="table table-hover">
+ 
+      <table class="table leaderboard">
         <thead>
           <tr>
+            <th>Place</th>
             <th>Name</th>
-            <th>Team</th>
             <th>Points</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1. Max Verstappen</td>
-            <td>Redbull</td>
-            <td>25p</td>
-          </tr>
-          <tr>
-            <td>2. Charles Leclerc</td>
-            <td>Ferrari</td>
-            <td>19p</td>
-          </tr>
-          <tr>
-            <td>3. Sergio Perez</td>
-            <td>Redbull</td>
-            <td>18p</td>
-          </tr>
-          <tr>
-            <td>4. Oscar Piastri</td>
-            <td>McLaren</td>
-            <td>12p</td>
-          </tr>
-          <tr>
-            <td>5. Fernando Alonso</td>
-            <td>Aston Martin</td>
-            <td>10p</td>
-          </tr>
+        <tbody id="leaderboardBody">
+          <!-- Leaderboard data will be appended here -->
         </tbody>
       </table>
     </div>
@@ -447,6 +424,50 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Sample data for leaderboard (you can replace this with your own data)
+  const leaderboardData = [
+    { name: 'Max Verstappen', points: 28 },
+    { name: 'Sergio Perez', points: 18 },
+    { name: 'Lewis Hamilton', points: 2 },
+    { name: 'George Russell', points: 8 },
+    { name: 'Charles Leclerc', points: 19 },
+    { name: 'Carlos Sainz', points: 0 },
+    { name: 'Lando Norris', points: 4 },
+    { name: 'Oscar Piastri', points: 12 },
+    { name: 'Fernando Alonso', points: 10 },
+    { name: 'Lance Stroll', points: 0 },
+    { name: 'Esteban Ocon', points: 0 },
+    { name: 'Pierre Gasly', points: 0 },
+    { name: 'Alexander Albon', points: 0 },
+    { name: 'Logan Sargent', points: 0 },
+    { name: 'Daniel Ricciardo', points: 0 },
+    { name: 'Yuki Tsunoda', points: 0 },
+    { name: 'GUANYU ZHOU', points: 0 },
+    { name: 'Valterri Bottas', points: 0 },
+    { name: 'Kevin Magnussen', points: 0 },
+    { name: 'Nico Hulkenberg', points: 1 },
+    { name: 'Ollie Bearman', points: 6 },
+    { name: 'Liam Lawson', points: 0 },
+    { name: 'Theo Pourchaire', points: 0 },
+    { name: 'Mick Schumacher', points: 0 },
+  ];
+
+  // Sort leaderboard data by points
+  leaderboardData.sort((a, b) => b.points - a.points);
+
+  // Render leaderboard
+  const leaderboardBody = document.getElementById('leaderboardBody');
+  leaderboardData.forEach((player, index) => {
+    const row = `<tr>
+                  <td>${index + 1}</td>
+                  <td>${player.name}</td>
+                  <td>${player.points}</td>
+                </tr>`;
+    leaderboardBody.innerHTML += row;
+  });
+</script>
 
 <script>
 function checkAnswer(questionNumber) {
