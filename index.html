@@ -158,6 +158,22 @@
       color: #fff !important;
     }
 
+    .location-tags {
+      background-color: red !important;
+      color: #fff;
+    }
+
+    .top-three {
+      background-color: gold; /* Gold for the first place */
+    }
+    .top-three:nth-child(2) {
+      background-color: silver; /* Silver for the second place */
+    }
+    .top-three:nth-child(3) {
+      background-color: #cd7f32; /* Bronze for the third place */
+    }
+
+
   </style>
 </head>
 <body>
@@ -405,7 +421,7 @@
  
       <table class="table leaderboard">
         <thead>
-          <tr>
+          <tr class="location-tags">
             <th>Place</th>
             <th>Name</th>
             <th>Points</th>
@@ -428,30 +444,30 @@
 <script>
   // Sample data for leaderboard (you can replace this with your own data)
   const leaderboardData = [
-    { name: 'Max Verstappen', points: 28 },
-    { name: 'Sergio Perez', points: 18 },
-    { name: 'Lewis Hamilton', points: 2 },
-    { name: 'George Russell', points: 8 },
-    { name: 'Charles Leclerc', points: 19 },
-    { name: 'Carlos Sainz', points: 0 },
-    { name: 'Lando Norris', points: 4 },
-    { name: 'Oscar Piastri', points: 12 },
-    { name: 'Fernando Alonso', points: 10 },
-    { name: 'Lance Stroll', points: 0 },
-    { name: 'Esteban Ocon', points: 0 },
-    { name: 'Pierre Gasly', points: 0 },
-    { name: 'Alexander Albon', points: 0 },
-    { name: 'Logan Sargent', points: 0 },
-    { name: 'Daniel Ricciardo', points: 0 },
-    { name: 'Yuki Tsunoda', points: 0 },
-    { name: 'GUANYU ZHOU', points: 0 },
-    { name: 'Valterri Bottas', points: 0 },
-    { name: 'Kevin Magnussen', points: 0 },
-    { name: 'Nico Hulkenberg', points: 1 },
-    { name: 'Ollie Bearman', points: 6 },
-    { name: 'Liam Lawson', points: 0 },
-    { name: 'Theo Pourchaire', points: 0 },
-    { name: 'Mick Schumacher', points: 0 },
+    { name: 'Max Verstappen (Red Bull)', points: 28 },
+    { name: 'Sergio Perez (Red Bull)', points: 18 },
+    { name: 'Lewis Hamilton (Mercedes)', points: 2 },
+    { name: 'George Russell (Mercedes)', points: 8 },
+    { name: 'Charles Leclerc (Ferrari)', points: 19 },
+    { name: 'Carlos Sainz (Ferrari)', points: 0 },
+    { name: 'Lando Norris (Mclaren)', points: 4 },
+    { name: 'Oscar Piastri (Mclaren)', points: 12 },
+    { name: 'Fernando Alonso (Aston Martin)', points: 10 },
+    { name: 'Lance Stroll (Aston Martin)', points: 0 },
+    { name: 'Esteban Ocon (Alpine)', points: 0 },
+    { name: 'Pierre Gasly (Alpine)', points: 0 },
+    { name: 'Alexander Albon (Williams)', points: 0 },
+    { name: 'Logan Sargent (Williams)', points: 0 },
+    { name: 'Daniel Ricciardo (RB)', points: 0 },
+    { name: 'Yuki Tsunoda (RB)', points: 0 },
+    { name: 'GUANYU ZHOU (Kick Sauber)', points: 0 },
+    { name: 'Valterri Bottas (Kick Sauber)', points: 0 },
+    { name: 'Kevin Magnussen (Haas)', points: 0 },
+    { name: 'Nico Hulkenberg (Haas)', points: 1 },
+    { name: 'Ollie Bearman (Ferrari)', points: 6 },
+    { name: 'Liam Lawson (Red Bull)', points: 0 },
+    { name: 'Theo Pourchaire (Kick Sauber)', points: 0 },
+    { name: 'Mick Schumacher (Mercedes)', points: 0 },
   ];
 
   // Sort leaderboard data by points
@@ -460,7 +476,7 @@
   // Render leaderboard
   const leaderboardBody = document.getElementById('leaderboardBody');
   leaderboardData.forEach((player, index) => {
-    const row = `<tr>
+    const row = `<tr ${index < 3 ? 'class="top-three"' : ''}>
                   <td>${index + 1}</td>
                   <td>${player.name}</td>
                   <td>${player.points}</td>
