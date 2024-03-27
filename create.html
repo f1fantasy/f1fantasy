@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>F1Fantasy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="grund.css">
+  <style type="text/css">
+
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #dc3545;
+            text-align: center;
+        }
+        .form-control {
+            border: 2px solid #dc3545;
+            border-radius: 4px;
+        }
+        .form-control:focus {
+            border-color: #dc3545;
+            box-shadow: none;
+        }
+        .btn-primary {
+            background-color: #dc3545;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c82333;
+        }
+        .input-group-text {
+            background-color: #dc3545;
+            border: none;
+            color: #fff;
+        }
+        .input-group-text i {
+            color: #fff;
+        }
+
+  </style>
+</head>
+<body>
+    <center>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Logo -->
+  <a class="navbar-brand" href="#">
+    <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
+  </a>
+
+  <!-- Toggler/collapsible Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Start</a>
+      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Teams
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="teams-f1.html">F1</a>
+            <a class="dropdown-item" href="teams-fantasy.html">Fantasy</a>
+          </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="drivers.html">Drivers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="video.html">Video</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Fantasy
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="create.html">Create</a>
+          <a class="dropdown-item" href="questions.html">Questions</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">News</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="container">
+        <h1 class="mt-5 mb-3">F1 Fantasy</h1>
+        <form action="mailto:officalf1fantasy@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="teamName">Teamname:</label>
+                <input type="text" class="form-control" id="teamName" name="teamName" required>
+            </div>
+            <div class="form-group">
+                <label for="teamColor">Teamcolor:</label>
+                <div class="input-group">
+                    <input type="color" class="form-control" id="teamColor" name="teamColor" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-car"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="teamCar">Teamcar:</label>
+                <input type="text" class="form-control" id="teamCar" name="teamCar" required>
+            </div>
+            <div class="form-group">
+                <label for="driver1">Driver 1:</label>
+                <input type="text" class="form-control" id="driver1" name="driver1" required>
+            </div>
+            <div class="form-group">
+                <label for="driver2">Driver 2:</label>
+                <input type="text" class="form-control" id="driver2" name="driver2" required>
+            </div>
+            <div class="form-group">
+                <label for="driver3">Driver 3:</label>
+                <input type="text" class="form-control" id="driver3" name="driver3" required>
+            </div>
+            <div class="form-group">
+                <label for="driver4">Driver 4:</label>
+                <input type="text" class="form-control" id="driver4" name="driver4" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send</button>
+        </form>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
