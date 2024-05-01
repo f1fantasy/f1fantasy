@@ -43,6 +43,21 @@
         margin-bottom: 40px;
     }
 
+    .image-container {
+        position: relative;
+        width: auto; /* Adjust as needed */
+        height: 200px; /* Adjust as needed */
+        overflow: hidden;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+    .image-container:hover img {
+        transform: scale(1.2); /* Adjust the zoom level */
+    }
+
     .arrow-up {
       color: green;
     }
@@ -187,7 +202,9 @@
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4">
-              <img src="News/newey.jpg" class="card-img-top" alt="Bild">
+              <div class="image-container">
+                <img src="News/newey.jpg" class="card-img-top" alt="Bild">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">Newey leaves Redbull after almost 20 years!</h5>
                 <hr style="background-color: white; width: 5%;">
@@ -197,7 +214,9 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4">
-              <img src="News/ferrari-blue.jpg" class="card-img-top" alt="Bild">
+              <div class="image-container">
+                <img src="News/ferrari-blue.jpg" class="card-img-top" alt="Bild">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">Ferrari goes Blue!</h5>
                 <hr style="background-color: white; width: 5%;">
@@ -207,7 +226,9 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4">
-              <img src="News/Hulkenberg.jpg" class="card-img-top" alt="Bild">
+              <div class="image-container">
+                <img src="News/Hulkenberg.jpg" class="card-img-top" alt="Bild">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">Hulkenberg to Kick Sauber!</h5>
                 <hr style="background-color: white; width: 5%;">
