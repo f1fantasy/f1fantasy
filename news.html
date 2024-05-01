@@ -51,6 +51,47 @@
       color: red;
     }
 
+    .carousel-item {
+      text-align: center;
+    }
+    
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      height: 650px;
+    }
+
+    .carousel-item {
+      display: none;
+    }
+
+    .carousel-item.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .carousel-item.fade-in {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
   </style>
 </head>
 <body>
@@ -101,9 +142,85 @@
   </div>
 </nav>
 
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active fade-in">
+      <img src="News/newey.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Leaves after almost 20 years!</h5>
+        <p>Read more down below!</p>
+      </div>
+    </div>
+    <div class="carousel-item fade-in">
+      <img src="News/ferrari-blue.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>A blue ferrari!</h5>
+        <p>Read more down below!</p>
+      </div>
+    </div>
+    <div class="carousel-item fade-in">
+      <img src="News/Hulkenberg.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Hulkenberg to Kick Sauber!</h5>
+        <p>Read more down below!</p>
+      </div>
+    </div>
+    <!-- Add more carousel items as needed -->
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
     <div class="header">
         <h1>F1 2024 News:</h1>
     </div>
+
+
+    <section class="news-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src="News/newey.jpg" class="card-img-top" alt="Bild">
+              <div class="card-body">
+                <h5 class="card-title">Newey leaves Redbull after almost 20 years!</h5>
+                <hr style="background-color: white; width: 5%;">
+                <p class="card-text">Red Bull have announced that Adrian Newey is to leave the team, with the esteemed F1 designer departing after almost 20 years at Milton Keynes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src="News/ferrari-blue.jpg" class="card-img-top" alt="Bild">
+              <div class="card-body">
+                <h5 class="card-title">Ferrari goes Blue!</h5>
+                <hr style="background-color: white; width: 5%;">
+                <p class="card-text">At the Miami GP ferrari will have new design to their car with a cool blue design. This is because they have a little anniversary at the Miami GP this weekend...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src="News/Hulkenberg.jpg" class="card-img-top" alt="Bild">
+              <div class="card-body">
+                <h5 class="card-title">Hulkenberg to Kick Sauber!</h5>
+                <hr style="background-color: white; width: 5%;">
+                <p class="card-text">Audi’s F1 CEO Andreas Seidl has made veteran Nico Hulkenberg his first signing, the German joining Sauber from next season before the team becomes the automotive giant’s works squad from 2026.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr style="color: black; width: 10%; margin: 40px 0px; height: 1px; background-color: black;">
+
 
     <section class="news-section py-5">
       <div class="container">
@@ -269,5 +386,16 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Interval to move to the next slide every 5 seconds
+    setInterval(function(){
+      $('.carousel').carousel('next');
+    }, 5000);
+  });
+</script>
 </body>
 </html>
