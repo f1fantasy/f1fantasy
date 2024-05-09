@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imola Grand Prix - F1 Fantasy</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="grund.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .jumbotron {
+      background: url('Race-page/monaco-jumbo.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+      height: 350px;
+    }
+    .event-card {
+      background-color: red;
+      color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-title {
+        font-weight: bolder;
+        font-size: xx-large;
+    }
+
+    .event-card .table {
+        color: #fff;
+    }
+
+    .race-results {
+      background-color: #ff4444;
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .top-three {
+      background-color: gold; /* Gold for the first place */
+    }
+    .top-three:nth-child(2) {
+      background-color: silver; /* Silver for the second place */
+    }
+    .top-three:nth-child(3) {
+      background-color: #cd7f32; /* Bronze for the third place */
+    }
+
+    tr {
+      transition: 1s;
+      border-radius: 15px !important;
+    }
+
+    tr:hover {
+      background-color: red !important;
+      color: #fff;
+    }
+
+    tr:hover td {
+      color: #fff !important;
+    }
+
+    .location-tags {
+      background-color: red !important;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+    <center>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+              <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
+            </a>
+          
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Start</a>
+                </li>
+                    <!-- Dropdown -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      Teams
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="teams-f1.html">F1</a>
+                      <a class="dropdown-item" href="teams-fantasy.html">Fantasy</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="drivers.html">Drivers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="video.html">Video</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Fantasy
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="create.html">Create</a>
+                    <a class="dropdown-item" href="questions.html">Questions</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news.html">News</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </center>
+
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+        <h1 class="display-4" style="font-weight: bolder; color: white;">Monaco Grand Prix</h1>
+        <p class="lead body-lead" style="font-weight: bold;">24 - 26 MAY</p>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card event-card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Event Schedule: <span style="font-weight: bolder;">24 - 26 MAY</span></h5>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Day</th>
+                        <th>Session</th>
+                        <th>Time (UTC+2)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2">Friday</td>
+                        <td>Practice Session 1</td>
+                        <td>13:30 - 14:30</td>
+                      </tr>
+                      <tr>
+                        <td>Practice Session 2</td>
+                        <td>17:00 - 18:00</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">Saturday</td>
+                        <td>Practice Session 3</td>
+                        <td>12:30 - 13:30</td>
+                      </tr>
+                      <tr>
+                        <td>Qualifying Session</td>
+                        <td>16:00 - 17:00</td>
+                      </tr>
+                      <tr>
+                        <td>Sunday</td>
+                        <td>Race</td>
+                        <td>15:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card event-card mb-4">
+                  <div class="card-body">
+                    <p class="card-text">First Grand Prix:</p>
+                    <h5 class="card-title info-title">1950</h5>
+                  </div>
+                </div>
+                <div class="card event-card mb-4">
+                  <div class="card-body">
+                    <p class="card-text">Number of Laps:</p>
+                    <h5 class="card-title info-title">78</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card event-card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">Circut Length:</p>
+                        <h5 class="card-title info-title">3.337 <span style="font-size: small; font-weight: lighter;">Km</span></h5>
+                    </div>
+                </div>
+                <div class="card event-card mb-4">
+                  <div class="card-body">
+                    <p class="card-text">Track Distance:</p>
+                    <h5 class="card-title info-title">260.286 <span style="font-size: small; font-weight: lighter;">Km</span></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card event-card mb-4">
+                    <div class="card-body">
+                        <p class="card-text">Lap Record:</p>
+                        <h5 class="card-title info-title">1:12.909 <span style="font-size: small; font-weight: lighter;">Lewis Hamilton (2021)</span></h5>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>          
+      </div>
+    </div>
+
+    <div class="container">
+        <h2>Race Weekend</h2>
+        <p>Leaderboard:</p>            
+   
+        <table class="table leaderboard">
+          <thead>
+            <tr class="location-tags">
+              <th>Place</th>
+              <th>Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBodyRace">
+  
+          </tbody>
+        </table>
+      </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Race weekend)
+    const leaderboardDataRace = [
+      { name: 'Max Verstappen #1 (Red Bull)', points: 0 },
+      { name: 'Sergio Perez #11 (Red Bull)', points: 0 },
+      { name: 'Lewis Hamilton #44 (Mercedes)', points: 0 },
+      { name: 'George Russell #63 (Mercedes)', points: 0 },
+      { name: 'Charles Leclerc #16 (Ferrari)', points: 0 },
+      { name: 'Carlos Sainz #55 (Ferrari)', points: 0 },
+      { name: 'Lando Norris #4 (Mclaren)', points: 0 },
+      { name: 'Oscar Piastri #81 (Mclaren)', points: 0 },
+      { name: 'Fernando Alonso #14 (Aston Martin)', points: 0 },
+      { name: 'Lance Stroll #18 (Aston Martin)', points: 0 },
+      { name: 'Esteban Ocon #31 (Alpine)', points: 0 },
+      { name: 'Pierre Gasly #10 (Alpine)', points: 0 },
+      { name: 'Alexander Albon #23 (Williams)', points: 0 },
+      { name: 'Logan Sargent #2 (Williams)', points: 0 },
+      { name: 'Daniel Ricciardo #3 (RB)', points: 0 },
+      { name: 'Yuki Tsunoda #22 (RB)', points: 0 },
+      { name: 'GUANYU ZHOU #24 (Kick Sauber)', points: 0 },
+      { name: 'Valterri Bottas #77 (Kick Sauber)', points: 0 },
+      { name: 'Kevin Magnussen #20 (Haas)', points: 0 },
+      { name: 'Nico Hulkenberg #27 (Haas)', points: 0 },
+    ];
+  
+    // Sort leaderboard data by points
+    leaderboardDataRace.sort((a, b) => b.points - a.points);
+  
+    // Render leaderboard
+    const leaderboardBodyRace = document.getElementById('leaderboardBodyRace');
+    leaderboardDataRace.forEach((player, index) => {
+      const row = `<tr ${index < 3 ? 'class="top-three"' : ''}>
+                    <td>${index + 1}</td>
+                    <td>${player.name}</td>
+                    <td>${player.points}</td>
+                  </tr>`;
+      leaderboardBodyRace.innerHTML += row;
+    });
+  </script>
+</body>
+</html>
