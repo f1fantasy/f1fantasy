@@ -6,6 +6,7 @@
   <title>Imola Grand Prix - F1 Fantasy</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="grund.css">
   <!-- Custom CSS -->
   <style>
@@ -71,6 +72,11 @@
       background-color: red !important;
       color: #fff;
     }
+
+    .clock-icon {
+      margin-left: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -134,49 +140,49 @@
   </div>
   <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card event-card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Event Schedule: <span style="font-weight: bolder;">24 - 26 MAY</span></h5>
+      <div class="col-md-6">
+        <div class="card event-card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Event Schedule: <span style="font-weight: bolder;">17 - 19 MAY</span></h5>
                 <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Day</th>
-                        <th>Session</th>
-                        <th>Time (UTC+2)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td rowspan="2">Friday</td>
-                        <td>Practice Session 1</td>
-                        <td>13:30 - 14:30</td>
-                      </tr>
-                      <tr>
-                        <td>Practice Session 2</td>
-                        <td>17:00 - 18:00</td>
-                      </tr>
-                      <tr>
-                        <td rowspan="2">Saturday</td>
-                        <td>Practice Session 3</td>
-                        <td>12:30 - 13:30</td>
-                      </tr>
-                      <tr>
-                        <td>Qualifying Session</td>
-                        <td>16:00 - 17:00</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td>Race</td>
-                        <td>15:00</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Session</th>
+                                <th>Time (UTC+2)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">Friday</td>
+                                <td>Practice Session 1</td>
+                                <td>13:30 - 14:30 <i class="fas fa-clock clock-icon" data-time="13:30 - 14:30"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Practice Session 2</td>
+                                <td>17:00 - 18:00 <i class="fas fa-clock clock-icon" data-time="17:00 - 18:00"></i></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Saturday</td>
+                                <td>Practice Session 3</td>
+                                <td>12:30 - 13:30 <i class="fas fa-clock clock-icon" data-time="12:30 - 13:30"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Qualifying Session</td>
+                                <td>16:00 - 17:00 <i class="fas fa-clock clock-icon" data-time="16:00 - 17:00"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Race</td>
+                                <td>15:00 <i class="fas fa-clock clock-icon" data-time="15:00"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+      </div>
           
           <div class="col-md-6">
             <div class="row">
@@ -246,7 +252,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  
   <script>
     // Race weekend)
     const leaderboardDataRace = [
@@ -286,5 +292,15 @@
       leaderboardBodyRace.innerHTML += row;
     });
   </script>
+  <script>
+    document.querySelectorAll('.clock-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            const time = this.getAttribute('data-time');
+            alert('Alarm set for: ' + time);
+            // Here you can add code to integrate with mobile alarm functionality
+            // This part is platform-dependent and typically involves native app code
+        });
+    });
+</script>
 </body>
 </html>
