@@ -7,68 +7,59 @@
   <link rel="icon" href="F1-logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="grund.css">
-  <style type="text/css">
+  <style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Arial', sans-serif;
+    }
+    .cost-cap {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #c82333;
+    }
+    .driver-slot, .driver-list {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+        border-radius: 5px;
+    }
+    .driver-list img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
 
-        body {
-            background-color: #e60000; /* Djup röd bakgrund */
-            color: #ffffff; /* Vit text */
-            font-family: 'Arial', sans-serif; /* Standard font */
-        }
-        .container {
-            background-color: #1c1c1c; /* Mörk bakgrund för formuläret */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            max-width: 600px;
-            margin: 50px auto;
-        }
-        h1, p {
-            color: red;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-          font-size: 36px;
-        }
-        label {
-            color: #ff9999;
-            font-weight: bold;
-        }
-        .form-control {
-            background-color: #2e2e2e; /* Mörkare input bakgrund */
-            color: #ffffff; /* Vit text i input */
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 15px;
-        }
-        .form-control::placeholder {
-            color: #b3b3b3; /* Placeholder text färg */
-        }
-        .btn-primary {
-            background-color: #ff3333; /* Röd knapp */
-            border-color: #ff3333;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #cc0000; /* Mörkare röd vid hover */
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        select.form-control {
-            appearance: none;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="#fff" d="M2 0L0 2h4zM0 3l2 2 2-2z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 8px 10px;
-        }
-
-  </style>
+    .driver-slot img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    .btn-danger, .btn-danger:active, .btn-danger:focus {
+        background-color: #c82333 !important;
+        border-color: #c82333 !important;
+    }
+    .btn-success, .btn-success:active, .btn-success:focus {
+        background-color: #28a745 !important;
+        border-color: #28a745 !important;
+    }
+    #send-email {
+        background-color: #c82333;
+        border-color: #c82333;
+    }
+    #send-email:hover {
+        background-color: #a71d2a;
+        border-color: #a71d2a;
+    }
+    #driver-slots .driver-slot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+</style>
 </head>
 <body>
     <center>
@@ -118,182 +109,187 @@
 </nav>
 
 <div class="container">
-  <center>
-    <h1 class="mt-5">Create your fantasy team!</h1>
-    <p>You can't go over $100M or use more the one player from a team...</p>
-  </center>
-    <form onsubmit="return validateBudget() && autoFillEmail()">
-        <div class="form-group">
-            <label for="teamName">Team Name:</label>
-            <input type="text" class="form-control" id="teamName" placeholder="Teamname" required>
-        </div>
-        <div class="form-group">
-            <label for="driver1">Driver 1</label>
-            <select class="form-control" id="driver1" required>
-                <option value="Max Verstappen">Max Verstappen (Red Bull) - 40M</option>
-                <option value="Sergio Perez">Sergio Perez (Red Bull) - 30M</option>
-                <option value="Charles Leclerc">Charles Leclerc (Ferrari) - 28M</option>
-                <option value="Carlos Sainz">Carlos Sainz (Ferrari) - 22M</option>
-                <option value="Lando Norris">Lando Norris (McLaren) - 26M</option>
-                <option value="Oscar Piastri">Oscar Piastri (McLaren) - 22M</option>
-                <option value="Lewis Hamilton">Lewis Hamilton (Mercedes) - 22M</option>
-                <option value="George Russell">George Russell (Mercedes) - 24M</option>
-                <option value="Fernando Alonso">Fernando Alonso (Aston Martin) - 17M</option>
-                <option value="Lance Stroll">Lance Stroll (Aston Martin) - 13M</option>
-                <option value="Esteban Ocon">Esteban Ocon (Alpine) - 6M</option>
-                <option value="Pierre Gasly">Pierre Gasly (Alpine) - 6M</option>
-                <option value="Yuki Tsunoda">Yuki Tsunoda (RB) - 11M</option>
-                <option value="Daniel Ricciardo">Daniel Ricciardo (RB) - 7M</option>
-                <option value="Kevin Magnussen">Kevin Magnussen (Haas) - 9M</option>
-                <option value="Nico Hulkenberg">Nico Hulkenberg (Haas) - 9M</option>
-                <option value="Alexander Albon">Alexander Albon (Williams) - 11M</option>
-                <option value="Logan Sargent">Logan Sargent (Williams) - 5M</option>
-                <option value="GUANYU ZHOU">GUANYU ZHOU (Kick Sauber) - 6M</option>
-                <option value="Valtteri Bottas">Valtteri Bottas (Kick Sauber) - 7M</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="driver2">Driver 2</label>
-            <select class="form-control" id="driver2" required>
-                <option value="Max Verstappen">Max Verstappen (Red Bull) - 40M</option>
-                <option value="Sergio Perez">Sergio Perez (Red Bull) - 30M</option>
-                <option value="Charles Leclerc">Charles Leclerc (Ferrari) - 28M</option>
-                <option value="Carlos Sainz">Carlos Sainz (Ferrari) - 22M</option>
-                <option value="Lando Norris">Lando Norris (McLaren) - 26M</option>
-                <option value="Oscar Piastri">Oscar Piastri (McLaren) - 22M</option>
-                <option value="Lewis Hamilton">Lewis Hamilton (Mercedes) - 22M</option>
-                <option value="George Russell">George Russell (Mercedes) - 24M</option>
-                <option value="Fernando Alonso">Fernando Alonso (Aston Martin) - 17M</option>
-                <option value="Lance Stroll">Lance Stroll (Aston Martin) - 13M</option>
-                <option value="Esteban Ocon">Esteban Ocon (Alpine) - 6M</option>
-                <option value="Pierre Gasly">Pierre Gasly (Alpine) - 6M</option>
-                <option value="Yuki Tsunoda">Yuki Tsunoda (RB) - 11M</option>
-                <option value="Daniel Ricciardo">Daniel Ricciardo (RB) - 7M</option>
-                <option value="Kevin Magnussen">Kevin Magnussen (Haas) - 9M</option>
-                <option value="Nico Hulkenberg">Nico Hulkenberg (Haas) - 9M</option>
-                <option value="Alexander Albon">Alexander Albon (Williams) - 11M</option>
-                <option value="Logan Sargent">Logan Sargent (Williams) - 5M</option>
-                <option value="GUANYU ZHOU">GUANYU ZHOU (Kick Sauber) - 6M</option>
-                <option value="Valtteri Bottas">Valtteri Bottas (Kick Sauber) - 7M</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="driver3">Driver 3</label>
-            <select class="form-control" id="driver3" required>
-                <option value="Max Verstappen">Max Verstappen (Red Bull) - 40M</option>
-                <option value="Sergio Perez">Sergio Perez (Red Bull) - 30M</option>
-                <option value="Charles Leclerc">Charles Leclerc (Ferrari) - 28M</option>
-                <option value="Carlos Sainz">Carlos Sainz (Ferrari) - 22M</option>
-                <option value="Lando Norris">Lando Norris (McLaren) - 26M</option>
-                <option value="Oscar Piastri">Oscar Piastri (McLaren) - 22M</option>
-                <option value="Lewis Hamilton">Lewis Hamilton (Mercedes) - 22M</option>
-                <option value="George Russell">George Russell (Mercedes) - 24M</option>
-                <option value="Fernando Alonso">Fernando Alonso (Aston Martin) - 17M</option>
-                <option value="Lance Stroll">Lance Stroll (Aston Martin) - 13M</option>
-                <option value="Esteban Ocon">Esteban Ocon (Alpine) - 6M</option>
-                <option value="Pierre Gasly">Pierre Gasly (Alpine) - 6M</option>
-                <option value="Yuki Tsunoda">Yuki Tsunoda (RB) - 11M</option>
-                <option value="Daniel Ricciardo">Daniel Ricciardo (RB) - 7M</option>
-                <option value="Kevin Magnussen">Kevin Magnussen (Haas) - 9M</option>
-                <option value="Nico Hulkenberg">Nico Hulkenberg (Haas) - 9M</option>
-                <option value="Alexander Albon">Alexander Albon (Williams) - 11M</option>
-                <option value="Logan Sargent">Logan Sargent (Williams) - 5M</option>
-                <option value="GUANYU ZHOU">GUANYU ZHOU (Kick Sauber) - 6M</option>
-                <option value="Valtteri Bottas">Valtteri Bottas (Kick Sauber) - 7M</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="driver4">Driver 4</label>
-            <select class="form-control" id="driver4" required>
-                <option value="Max Verstappen">Max Verstappen (Red Bull) - 40M</option>
-                <option value="Sergio Perez">Sergio Perez (Red Bull) - 30M</option>
-                <option value="Charles Leclerc">Charles Leclerc (Ferrari) - 28M</option>
-                <option value="Carlos Sainz">Carlos Sainz (Ferrari) - 22M</option>
-                <option value="Lando Norris">Lando Norris (McLaren) - 26M</option>
-                <option value="Oscar Piastri">Oscar Piastri (McLaren) - 22M</option>
-                <option value="Lewis Hamilton">Lewis Hamilton (Mercedes) - 22M</option>
-                <option value="George Russell">George Russell (Mercedes) - 24M</option>
-                <option value="Fernando Alonso">Fernando Alonso (Aston Martin) - 17M</option>
-                <option value="Lance Stroll">Lance Stroll (Aston Martin) - 13M</option>
-                <option value="Esteban Ocon">Esteban Ocon (Alpine) - 6M</option>
-                <option value="Pierre Gasly">Pierre Gasly (Alpine) - 6M</option>
-                <option value="Yuki Tsunoda">Yuki Tsunoda (RB) - 11M</option>
-                <option value="Daniel Ricciardo">Daniel Ricciardo (RB) - 7M</option>
-                <option value="Kevin Magnussen">Kevin Magnussen (Haas) - 9M</option>
-                <option value="Nico Hulkenberg">Nico Hulkenberg (Haas) - 9M</option>
-                <option value="Alexander Albon">Alexander Albon (Williams) - 11M</option>
-                <option value="Logan Sargent">Logan Sargent (Williams) - 5M</option>
-                <option value="GUANYU ZHOU">GUANYU ZHOU (Kick Sauber) - 6M</option>
-                <option value="Valtteri Bottas">Valtteri Bottas (Kick Sauber) - 7M</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-    </form>
+  <div class="row mt-5">
+      <div class="col-md-8">
+          <div class="cost-cap mb-3">
+              Cost Cap: <span id="cost-cap" class="text-success">$100.0M</span>
+          </div>
+          <div class="form-group">
+              <label for="team-name">Team Name</label>
+              <input type="text" class="form-control" id="team-name" placeholder="Enter your team name">
+          </div>
+          <div id="driver-slots">
+              <div class="driver-slot text-center" data-slot="1">
+                  <button type="button" class="btn btn-danger">Add Driver</button>
+              </div>
+              <div class="driver-slot text-center" data-slot="2">
+                  <button type="button" class="btn btn-danger">Add Driver</button>
+              </div>
+              <div class="driver-slot text-center" data-slot="3">
+                  <button type="button" class="btn btn-danger">Add Driver</button>
+              </div>
+              <div class="driver-slot text-center" data-slot="4">
+                  <button type="button" class="btn btn-danger">Add Driver</button>
+              </div>
+          </div>
+          <button id="send-email" class="btn btn-primary mt-3" style="margin-bottom: 20px;">Send Email</button>
+      </div>
+      <div class="col-md-4">
+          <input type="text" class="form-control mb-3" placeholder="Search Drivers" id="search-input">
+          <div id="driver-list">
+              <!-- Driver list will be populated here -->
+          </div>
+      </div>
+  </div>
 </div>
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
-  function validateBudget() {
-      const driverPrices = {
-          'Max Verstappen': 40,
-          'Sergio Perez': 30,
-          'Charles Leclerc': 28,
-          'Carlos Sainz': 22,
-          'Lando Norris': 26,
-          'Oscar Piastri': 22,
-          'Lewis Hamilton': 22,
-          'George Russell': 24,
-          'Fernando Alonso': 17,
-          'Lance Stroll': 13,
-          'Esteban Ocon': 6,
-          'Pierre Gasly': 6,
-          'Daniel Ricciardo': 7,
-          'Yuki Tsunoda': 11,
-          'Kevin Magnussen': 9,
-          'Nico Hulkenberg': 9,
-          'Alexander Albon': 11,
-          'Logan Sargent': 5,
-          'GUANYU ZHOU': 6,
-          'Valtteri Bottas': 7,
-      };
+  const drivers = [
+      { id: 1, name: 'Max Verstappen', team: 'Red Bull', cost: 40.0, img: 'drivers/verstappen.jpg' },
+      { id: 2, name: 'Sergio Perez', team: 'Red Bull', cost: 30.0, img: 'drivers/perez.jpg' },
+      { id: 3, name: 'Charles Leclerc', team: 'Ferrari', cost: 28.0, img: 'drivers/leclerc.jpg' },
+      { id: 4, name: 'Carlos Sainz', team: 'Ferrari', cost: 22.0, img: 'drivers/sainz.jpg' },
+      { id: 5, name: 'Lando Norris', team: 'McLaren', cost: 26.0, img: 'drivers/norris.jpg' },
+      { id: 6, name: 'Oscar Piastri', team: 'McLaren', cost: 22.0, img: 'drivers/piastri.jpg' },
+      { id: 7, name: 'Lewis Hamilton', team: 'Mercedes', cost: 22.0, img: 'drivers/hamilton.jpg' },
+      { id: 8, name: 'George Russell', team: 'Mercedes', cost: 24.0, img: 'drivers/russell.jpg' },
+      { id: 9, name: 'Fernando Alonso', team: 'Aston Martin', cost: 17.0, img: 'drivers/alonso.jpg' },
+      { id: 10, name: 'Lance Stroll', team: 'Aston Martin', cost: 13.0, img: 'drivers/stroll.jpg' },
+      { id: 11, name: 'Esteban Ocon', team: 'Alpine', cost: 6.0, img: 'drivers/ocon.jpg' },
+      { id: 12, name: 'Pierre Gasly', team: 'Alpine', cost: 6.0, img: 'drivers/gasly.jpg' },
+      { id: 13, name: 'Yuki Tsunoda', team: 'AlphaTauri', cost: 11.0, img: 'drivers/tsunoda.jpg' },
+      { id: 14, name: 'Daniel Ricciardo', team: 'AlphaTauri', cost: 7.0, img: 'drivers/ricciardo.jpg' },
+      { id: 15, name: 'Kevin Magnussen', team: 'Haas', cost: 9.0, img: 'drivers/magnussen.jpg' },
+      { id: 16, name: 'Nico Hulkenberg', team: 'Haas', cost: 9.0, img: 'drivers/hulkenberg.jpg' },
+      { id: 17, name: 'Alexander Albon', team: 'Williams', cost: 11.0, img: 'drivers/albon.jpg' },
+      { id: 18, name: 'Logan Sargent', team: 'Williams', cost: 5.0, img: 'drivers/sargent.jpg' },
+      { id: 19, name: 'Guanyu Zhou', team: 'Alfa Romeo', cost: 6.0, img: 'drivers/zhou.jpg' },
+      { id: 20, name: 'Valtteri Bottas', team: 'Alfa Romeo', cost: 7.0, img: 'drivers/bottas.jpg' }
+  ];
 
-      const selectedDrivers = [
-          document.getElementById('driver1').value,
-          document.getElementById('driver2').value,
-          document.getElementById('driver3').value,
-          document.getElementById('driver4').value
-      ];
+  const selectedDrivers = [];
+  const costCap = 100.0;
 
-      let totalCost = selectedDrivers.reduce((sum, driver) => sum + driverPrices[driver], 0);
+  document.addEventListener('DOMContentLoaded', function() {
+      const driverListEl = document.getElementById('driver-list');
+      const driverSlots = document.querySelectorAll('.driver-slot');
+      const costCapEl = document.getElementById('cost-cap');
+      const sendEmailBtn = document.getElementById('send-email');
 
-      if (totalCost > 100) {
-          alert("You can't go over $100M!");
-          return false;
+      function renderDriverList(filter = '') {
+          driverListEl.innerHTML = '';
+          drivers.filter(driver => driver.name.toLowerCase().includes(filter.toLowerCase())).forEach(driver => {
+              const driverEl = document.createElement('div');
+              driverEl.className = 'driver-list d-flex align-items-center';
+              driverEl.innerHTML = `
+                  <img src="${driver.img}" alt="Driver" style="background-color: ${getTeamColor(driver.team)};">
+                  <div>
+                      <strong>${driver.name}</strong><br>
+                      $${driver.cost}M
+                  </div>
+                  <button type="button" class="btn btn-success ml-auto" data-id="${driver.id}">+</button>
+              `;
+              driverListEl.appendChild(driverEl);
+          });
       }
-      return true;
-  }
 
-  function autoFillEmail() {
-      const teamName = document.getElementById('teamName').value;
-      const driver1 = document.getElementById('driver1').value;
-      const driver2 = document.getElementById('driver2').value;
-      const driver3 = document.getElementById('driver3').value;
-      const driver4 = document.getElementById('driver4').value;
-      
-      const emailBody = `Team Name: ${teamName}%0D%0A` +
-                        `Driver 1: ${driver1}%0D%0A` +
-                        `Driver 2: ${driver2}%0D%0A` +
-                        `Driver 3: ${driver3}%0D%0A` +
-                        `Driver 4: ${driver4}`;
-      
-      const mailtoLink = `mailto:officalf1fantasy@gmail.com?subject=F1 Fantasy Team&body=${emailBody}`;
-      window.location.href = mailtoLink;
-      return false;
-  }
+      function getTeamColor(team) {
+          // Define team colors here
+          const teamColors = {
+              'Red Bull': 'darkblue',
+              'Ferrari': 'red',
+              'McLaren': '#ff8700',
+              'Mercedes': '#00d2be',
+              'Aston Martin': '#006f62',
+              'Alpine': 'pink',
+              'AlphaTauri': '#2b4562',
+              'Haas': 'gray',
+              'Williams': '#005aff',
+              'Alfa Romeo': 'green'
+          };
+          return teamColors[team] || '#ffffff';
+      }
+
+      function addDriverToSlot(driverId) {
+          const driver = drivers.find(d => d.id == driverId);
+          if (driver && selectedDrivers.length < 4 && !selectedDrivers.includes(driver)) {
+              const availableSlot = [...driverSlots].find(slot => !slot.querySelector('img'));
+              if (availableSlot) {
+                  selectedDrivers.push(driver);
+                  const slot = availableSlot.getAttribute('data-slot');
+                  const slotEl = document.querySelector(`.driver-slot[data-slot="${slot}"]`);
+                  slotEl.innerHTML = `
+                      <div class="d-flex align-items-center">
+                          <img src="${driver.img}" alt="Driver" style="background-color: ${getTeamColor(driver.team)};">
+                          <div>
+                              <strong>${driver.name}</strong><br>
+                              $${driver.cost}M
+                          </div>
+                          <button type="button" class="btn btn-danger ml-auto" data-slot="${slot}">-</button>
+                      </div>
+                  `;
+                  updateCostCap();
+              }
+          }
+      }
+
+      function removeDriverFromSlot(slot) {
+          const slotEl = document.querySelector(`.driver-slot[data-slot="${slot}"]`);
+          const driverName = slotEl.querySelector('strong').textContent;
+          const driverIndex = selectedDrivers.findIndex(d => d.name == driverName);
+          if (driverIndex > -1) {
+              selectedDrivers.splice(driverIndex, 1);
+              slotEl.innerHTML = `<button type="button" class="btn btn-danger">Add Driver</button>`;
+              updateCostCap();
+          }
+      }
+
+      function updateCostCap() {
+          const totalCost = selectedDrivers.reduce((sum, driver) => sum + driver.cost, 0);
+          costCapEl.textContent = `$${(costCap - totalCost).toFixed(1)}M`;
+          costCapEl.classList.toggle('text-danger', totalCost > costCap);
+      }
+
+      document.addEventListener('click', function(event) {
+          if (event.target.classList.contains('btn-success')) {
+              const driverId = event.target.getAttribute('data-id');
+              addDriverToSlot(driverId);
+          } else if (event.target.classList.contains('btn-danger') && event.target.hasAttribute('data-slot')) {
+              const slot = event.target.getAttribute('data-slot');
+              removeDriverFromSlot(slot);
+          }
+      });
+
+      document.getElementById('search-input').addEventListener('input', function(event) {
+          renderDriverList(event.target.value);
+      });
+
+      sendEmailBtn.addEventListener('click', function() {
+          const teamName = document.getElementById('team-name').value;
+          if (teamName.trim() === '' || selectedDrivers.length < 4) {
+              alert('Please enter a team name and select 4 drivers.');
+              return;
+          }
+
+          const totalCost = selectedDrivers.reduce((sum, driver) => sum + driver.cost, 0);
+          if (totalCost > costCap) {
+              alert('You have exceeded the cost cap.');
+              return;
+          }
+
+          const uniqueTeams = [...new Set(selectedDrivers.map(driver => driver.team))];
+          if (uniqueTeams.length < selectedDrivers.length) {
+              alert('You cannot have more than one driver from the same team.');
+              return;
+          }
+
+          const driverNames = selectedDrivers.map(driver => driver.name).join(', ');
+          const emailBody = `Team Name: ${teamName}\nDrivers: ${driverNames}`;
+          window.location.href = `mailto:officalf1fantasy@gmail.com?subject= Team&body=${encodeURIComponent(emailBody)}`;
+      });
+
+      renderDriverList();
+  });
 </script>
 </body>
 </html>
