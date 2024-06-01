@@ -7,7 +7,7 @@
   <link rel="icon" href="F1-logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="grund.css">
-  <style>
+  <style type="text/css">
     body {
         background-color: #f8f9fa;
         font-family: 'Arial', sans-serif;
@@ -63,50 +63,50 @@
 </head>
 <body>
     <center>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Logo -->
-  <a class="navbar-brand" href="#">
-    <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
-  </a>
-
-  <!-- Toggler/collapsible Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Start</a>
-      </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Teams
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="teams-f1.html">F1</a>
-            <a class="dropdown-item" href="teams-fantasy.html">Fantasy</a>
-          </div>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link" href="drivers.html">Drivers</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Fantasy
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
         </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="create.html">Create</a>
-          <a class="dropdown-item" href="questions.html">Questions</a>
+      
+        <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Start</a>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  Teams
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="teams-f1.html">F1</a>
+                  <a class="dropdown-item" href="teams-fantasy.html">Fantasy</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="drivers.html">Drivers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Fantasy
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="create.html">Create</a>
+                <a class="dropdown-item" href="questions.html">Questions</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+          </ul>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="news.html">News</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      </nav>
 
 <div class="container">
   <div class="row mt-5">
@@ -162,7 +162,7 @@
       { id: 15, name: 'Kevin Magnussen', team: 'Haas', cost: 9.0, img: 'drivers/magnussen.jpg' },
       { id: 16, name: 'Nico Hulkenberg', team: 'Haas', cost: 9.0, img: 'drivers/hulkenberg.jpg' },
       { id: 17, name: 'Alexander Albon', team: 'Williams', cost: 11.0, img: 'drivers/albon.jpg' },
-      { id: 18, name: 'Logan Sargent', team: 'Williams', cost: 5.0, img: 'drivers/sargent.jpg' },
+      { id: 18, name: 'Logan Sargeant', team: 'Williams', cost: 5.0, img: 'drivers/sargeant.jpg' },
       { id: 19, name: 'Guanyu Zhou', team: 'Alfa Romeo', cost: 6.0, img: 'drivers/zhou.jpg' },
       { id: 20, name: 'Valtteri Bottas', team: 'Alfa Romeo', cost: 7.0, img: 'drivers/bottas.jpg' }
   ];
@@ -291,5 +291,7 @@
       renderDriverList();
   });
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
