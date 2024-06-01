@@ -69,7 +69,7 @@
     .mclaren { background-color: #FF8700; }
     .mercedes { background-color: #00D2BE; }
     .alpine { background-color: pink; }
-    .aston-martin { background-color: #02685c; }
+    .aston-martin { background-color: #357e68; }
     .kick-sauber { background-color: #99ff00; }
     .rb { background-color: #3d3dc2; }
     .williams { background-color: #005AFF; }
@@ -134,24 +134,50 @@
 
   <script src="drivers-points.js"></script> <!-- Importing driverPoints object -->
   <script>
+    // Map driver names to their teams
+    const driverTeams = {
+        "Max Verstappen": "red-bull",
+        "Charles Leclerc": "ferrari",
+        "Carlos Sainz": "ferrari",
+        "Lando Norris": "mclaren",
+        "Sergio Perez": "red-bull",
+        "Oscar Piastri": "mclaren",
+        "George Russell": "mercedes",
+        "Lewis Hamilton": "mercedes",
+        "Fernando Alonso": "aston-martin",
+        "Yuki Tsunoda": "rb",
+        "Lance Stroll": "aston-martin",
+        "Daniel Ricciardo": "rb",
+        "Nico Hulkenberg": "haas",
+        "Alexander Albon": "williams",
+        "Esteban OCON": "alpine",
+        "Pierre Gasly": "alpine",
+        "Kevin Magnussen": "haas",
+        "Logan Sargeant": "williams",
+        "GUANYU ZHOU": "kick-sauber",
+        "Valtteri Bottas": "kick-sauber"
+      // Add other driver-team mappings as needed
+    };
+  
     // Convert driverPoints object to array of objects
     const drivers = Object.keys(driverPoints).map(name => ({
       name,
       points: driverPoints[name],
-      image: `drivers/${name.split(' ').pop()}.jpg` // Image path added here
+      image: `drivers/${name.split(' ').pop()}.jpg`, // Image path added here
+      team: driverTeams[name] // Get the team of the driver from the mapping
     }));
-
+  
     // Sort drivers by points in descending order
     drivers.sort((a, b) => b.points - a.points);
-
+  
     const driversContainer = document.getElementById('drivers-container');
-
+  
     drivers.forEach((driver, index) => {
       const driverCard = document.createElement('div');
       driverCard.className = `col-md-4 col-sm-6 driver-card`;
       driverCard.innerHTML = `
         <div class="position">${index + 1}</div>
-        <div class="team-stripe"></div> <!-- Class added dynamically -->
+        <div class="team-stripe ${driver.team || 'default-team'}"></div> <!-- Add team stripe here -->
         <img src="${driver.image}" alt="${driver.name}"> <!-- Image added here -->
         <div class="name">${driver.name}</div>
         <div class="points">${driver.points} PTS</div>
@@ -159,6 +185,7 @@
       driversContainer.appendChild(driverCard);
     });
   </script>
+  
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
