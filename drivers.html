@@ -37,12 +37,6 @@
       font-weight: bold;
       color: #fff;
     }
-    .driver-card img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
     .driver-card .name {
       font-size: 1.2em;
       font-weight: bold;
@@ -63,6 +57,21 @@
       left: 0;
       width: 100%;
       height: 5px;
+    }
+
+    .team-logo {
+        width: 50px; /* Adjust the size as needed */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .driver-image {
+        width: 160px; /* Keep the driver image size */
+        height: 160px;
+        border-radius: 50%;
+        margin-bottom: 10px;
     }
     .red-bull { background-color: darkblue; }
     .ferrari { background-color: red; }
@@ -159,6 +168,21 @@
       // Add other driver-team mappings as needed
     };
   
+    // Team logos
+    const teamLogos = {
+      "red-bull": "teams/red-bull-logo.jpg",
+      "ferrari": "teams/ferrari-logo.jpg",
+      "mclaren": "teams/mclaren-logo.jpg",
+      "mercedes": "teams/mercedes-logo.jpg",
+      "aston-martin": "teams/aston-martin-logo.jpg",
+      "rb": "teams/rb-logo.jpg",
+      "haas": "teams/haas-logo.jpg",
+      "williams": "teams/williams-logo.jpg",
+      "alpine": "teams/alpine-logo.jpg",
+      "kick-sauber": "teams/kick-sauber-logo.jpg"
+      // Add other team logos as needed
+    };
+  
     // Convert driverPoints object to array of objects
     const drivers = Object.keys(driverPoints).map(name => ({
       name,
@@ -178,9 +202,10 @@
       driverCard.innerHTML = `
         <div class="position">${index + 1}</div>
         <div class="team-stripe ${driver.team || 'default-team'}"></div> <!-- Add team stripe here -->
-        <img src="${driver.image}" alt="${driver.name}"> <!-- Image added here -->
+        <img src="${driver.image}" alt="${driver.name}" class="driver-image"> <!-- Image added here -->
         <div class="name">${driver.name}</div>
         <div class="points">${driver.points} PTS</div>
+        <img src="${teamLogos[driver.team]}" alt="${driver.team}" class="team-logo"> <!-- Add team logo here -->
       `;
       driversContainer.appendChild(driverCard);
     });
