@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>F1Fantasy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="F1-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="grund.css">
+  <style type="text/css">
+        .card {
+            border: 1px solid #ccc; /* Ändra färgen på korts gräns */
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.5s; /* Lägg till övergång för border-färg */
+        }
+        .card:hover {
+            border-color: #dc3545; /* Ändra border-färgen till röd när man hoverar över kortet */
+            text-decoration: none !important;
+        }
+        .card-body {
+            padding: 10px;
+            background-color: #f8f9fa; /* Lägg till en ljus bakgrundsfärg */
+        }
+        .round-title,
+        .grand-prix,
+        .date-title {
+            color: #000000; /* Ändra textfärgen till svart */
+        }
+        .round-title,
+        .date-title {
+            font-weight: bolder; /* Behåll textens fetstil */
+            font-size: large;
+        }
+
+        .grand-prix {
+            font-size: small;
+            font-weight: bolder;
+        }
+
+        .country-name {
+            color: red;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        .country-flag {
+            width: 40px;
+            border-radius: 10px;
+        }
+
+        .race-section {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            margin: 40px 0px;
+            border-radius: 0px 20px 0px 0px;
+        }
+        .race-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0px 20px 0px 0px;
+            border: 10px solid transparent;
+            border-top-color: red;
+            border-right-color: red;
+            z-index: 1;
+        }
+        .jumbotron {
+            background: none;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+        .race-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+        .race-info {
+            padding: 20px;
+            z-index: 2;
+            position: relative;
+        }
+        .race-layout img {
+            max-width: 300px;
+            height: auto;
+        }
+        .schedule-overlay {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bolder;
+            max-width: 300px;
+            z-index: 3;
+        }
+        .schedule-overlay h5 {
+            margin-bottom: 10px;
+        }
+        .schedule-overlay p {
+            margin: 5px 0;
+        }
+</style>
+</head>
+<body>
+    <center>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="Logo" style="width: 100px;"> <!-- Anpassa sökvägen och bredden efter behov -->
+        </a>
+      
+        <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Start</a>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  Teams
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="teams-f1.html">F1</a>
+                  <a class="dropdown-item" href="teams-fantasy.html">Fantasy</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="drivers.html">Drivers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Fantasy
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="create.html">Create</a>
+                <a class="dropdown-item" href="questions.html">Questions</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <h1 style="color: #222;">F1 2024 Schedule</h1>
+
+        
+      <section class="race-section">
+        <div class="race-border"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 race-info">
+                    <h2>CANADA 2024  <span><img src="flags/canada.png" style="height: 30px;" alt="Canada Flag"></span></h2>
+                    <hr style="margin: 20px 0px; background-color: white;">
+                    <h3>07 - 09 juni</h3>
+                    <hr style="margin: 20px 0px; background-color: white;">
+                    <div class="race-layout">
+                        <img src="Raceweekends/canada-circuit.jpg" alt="Bana Layout">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="jumbotron">
+                        <img src="Raceweekends/canada-jumbo.jpg" class="race-image" alt="Race Schema">
+                        <div class="schedule-overlay">
+                            <h5>Race Schedule</h5>
+                            <p>PRACTICE 1: FRI 13:30 - 14:30</p>
+                            <p>PRACTICE 2: FRI 17:00 - 18:00</p>
+                            <p>PRACTICE 3: SAT 12:30 - 13:30</p>
+                            <p>QUALIFYING: SAT 16:00 - 17:00</p>
+                            <p>RACE: SUN 14:00</p>
+                            <p><small>Times displayed are track times</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row" id="raceContainer"></div>
+    </div>
+    <script>
+        const races = [
+                { round: "ROUND 10", date: "21-23 JUN", country: "Spain", flag: "flags/spain.png", grandPrix: "FORMULA 1 ARAMCO GRAN PREMIO DE ESPAÑA 2024", link: "spain.html", circuitImage: "Raceweekends/spain-circuit.jpg" },
+                { round: "ROUND 11", date: "28-30 JUN", country: "Austria", flag: "flags/austria.png", grandPrix: "FORMULA 1 QATAR AIRWAYS AUSTRIAN GRAND PRIX 2024", link: "austria.html", circuitImage: "Raceweekends/austria-circuit.jpg" },
+                { round: "ROUND 12", date: "05-07 JUL", country: "Great Britain", flag: "flags/greatbritain.png", grandPrix: "FORMULA 1 QATAR AIRWAYS BRITISH GRAND PRIX 2024", link: "greatbritain.html", circuitImage: "Raceweekends/greatbritain-circuit.jpg" },
+                { round: "ROUND 13", date: "19-21 JUL", country: "Hungary", flag: "flags/hungary.png", grandPrix: "FORMULA 1 HUNGARIAN GRAND PRIX 2024", link: "hungary.html", circuitImage: "Raceweekends/hungary-circuit.jpg" }
+        ];
+    
+        const raceContainer = document.getElementById("raceContainer");
+    
+        let currentRow;
+        races.forEach((race, index) => {
+            if (index % 4 === 0) {
+                currentRow = document.createElement("div");
+                currentRow.className = "row";
+                raceContainer.appendChild(currentRow);
+            }
+    
+            const card = document.createElement("div");
+            card.className = "col-md-3 mb-4";
+            card.innerHTML = `
+                <a href="${race.link}" class="card">
+                    <div class="card-body text-center">
+                        <div class="round-title">${race.round}</div>
+                        <div class="date-title">${race.date}</div>
+                        <img class="country-flag" src="${race.flag}" alt="${race.country} Flag">
+                        <div class="country-name">${race.country}</div>
+                        <div class="grand-prix">${race.grandPrix}</div>
+                        <div class="circuit">
+                            <img src="${race.circuitImage}" alt="Circuit">
+                        </div>
+                    </div>
+                </a>
+            `;
+            currentRow.appendChild(card);
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
