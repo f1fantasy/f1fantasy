@@ -13,6 +13,7 @@
             border-radius: 8px;
             overflow: hidden;
             transition: border-color 0.5s; /* Lägg till övergång för border-färg */
+            height: 350px;
         }
         .card:hover {
             border-color: #dc3545; /* Ändra border-färgen till röd när man hoverar över kortet */
@@ -108,6 +109,12 @@
         .schedule-overlay p {
             margin: 5px 0;
         }
+        
+        .winner img {
+            height: 160px;
+            border: 10px solid transparent;
+            border-bottom-color: red;
+        }
 </style>
 </head>
 <body>
@@ -158,7 +165,9 @@
       </nav>
 
         <h1 style="color: #222;">F1 2024 Schedule</h1>
-
+        <div class="container">
+            <div class="row" id="finishedRaceContainer"></div>
+        </div>
         
       <section class="race-section">
         <div class="race-border"></div>
@@ -194,11 +203,66 @@
         <div class="row" id="raceContainer"></div>
     </div>
     <script>
+
+            const finishedRaces = [
+                { round: "ROUND 1", date: "29-01 FEB-MAR", country: "Bahrain", flag: "flags/qatar.png", grandPrix: "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2024", winnerImage: "drivers/verstappen.jpg" },
+                { round: "ROUND 2", date: "07-09 MAR", country: "Saudi Arabia", flag: "flags/saudi.png", grandPrix: "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2024", winnerImage: "drivers/verstappen.jpg" },
+                { round: "ROUND 3", date: "22-24 MAR", country: "Australia", flag: "flags/australia.png", grandPrix: "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2024", winnerImage: "drivers/sainz.jpg" },
+                { round: "ROUND 4", date: "05-07 APR", country: "Japan", flag: "flags/japan.png", grandPrix: "FORMULA 1 MSC CRUISES JAPANESE GRAND PRIX 2024", winnerImage: "drivers/verstappen.jpg" },
+                { round: "ROUND 5", date: "19-21 APR", country: "China", flag: "flags/china.png", grandPrix: "FORMULA 1 CHINA GRAND PRIX 2024", winnerImage: "drivers/verstappen.jpg" },
+                { round: "ROUND 6", date: "03-05 MAY", country: "Miami", flag: "flags/usa.png", grandPrix: "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2024", winnerImage: "drivers/norris.jpg" },
+                { round: "ROUND 7", date: "17-19 MAY", country: "Emilia-Romagna", flag: "flags/italy.png", grandPrix: "FORMULA 1 MSC CRUISES GRAN PREMIO DEL MADE IN ITALY E DELL'EMILIA-ROMAGNA 2024", winnerImage: "drivers/verstappen.jpg" },
+                { round: "ROUND 8", date: "24-26 MAY", country: "Monaco", flag: "flags/monaco.png", grandPrix: "FORMULA 1 GRAND PRIX DE MONACO 2024", winnerImage: "drivers/leclerc.jpg" },
+                // Add more finished races as needed
+            ];
+
+            const finishedRaceContainer = document.getElementById("finishedRaceContainer");
+
+            let currentRowFinished;
+            finishedRaces.forEach((race, index) => {
+                if (index % 4 === 0) {
+                    currentRowFinished = document.createElement("div");
+                    currentRowFinished.className = "row";
+                    finishedRaceContainer.appendChild(currentRowFinished);
+                }
+
+                const cardFinished = document.createElement("div");
+                cardFinished.className = "col-md-3 mb-4";
+                cardFinished.innerHTML = `
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="round-title">${race.round}</div>
+                            <div class="date-title">${race.date}</div>
+                            <img class="country-flag" src="${race.flag}" alt="${race.country} Flag">
+                            <div class="country-name">${race.country}</div>
+                            <div class="grand-prix">${race.grandPrix}</div>
+                            <div class="winner">
+                                <img src="${race.winnerImage}" alt="Winner">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                currentRowFinished.appendChild(cardFinished);
+            });
+
+
+
         const races = [
                 { round: "ROUND 10", date: "21-23 JUN", country: "Spain", flag: "flags/spain.png", grandPrix: "FORMULA 1 ARAMCO GRAN PREMIO DE ESPAÑA 2024", link: "spain.html", circuitImage: "Raceweekends/spain-circuit.jpg" },
                 { round: "ROUND 11", date: "28-30 JUN", country: "Austria", flag: "flags/austria.png", grandPrix: "FORMULA 1 QATAR AIRWAYS AUSTRIAN GRAND PRIX 2024", link: "austria.html", circuitImage: "Raceweekends/austria-circuit.jpg" },
                 { round: "ROUND 12", date: "05-07 JUL", country: "Great Britain", flag: "flags/greatbritain.png", grandPrix: "FORMULA 1 QATAR AIRWAYS BRITISH GRAND PRIX 2024", link: "greatbritain.html", circuitImage: "Raceweekends/greatbritain-circuit.jpg" },
-                { round: "ROUND 13", date: "19-21 JUL", country: "Hungary", flag: "flags/hungary.png", grandPrix: "FORMULA 1 HUNGARIAN GRAND PRIX 2024", link: "hungary.html", circuitImage: "Raceweekends/hungary-circuit.jpg" }
+                { round: "ROUND 13", date: "19-21 JUL", country: "Hungary", flag: "flags/hungary.png", grandPrix: "FORMULA 1 HUNGARIAN GRAND PRIX 2024", link: "hungary.html", circuitImage: "Raceweekends/hungary-circuit.jpg" },
+                { round: "ROUND 14", date: "26-28 JUL", country: "Belgium", flag: "flags/belgium.png", grandPrix: "FORMULA 1 ROLEX BELGIAN GRAND PRIX 2024", link: "belgium.html", circuitImage: "Raceweekends/belgium-circuit.jpg" },
+                { round: "ROUND 15", date: "23-25 AUG", country: "Netherlands", flag: "flags/netherlands.png", grandPrix: "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2024", link: "netherlands.html", circuitImage: "Raceweekends/netherlands-circuit.jpg" },
+                { round: "ROUND 16", date: "30-01 AUG-SEP", country: "Italy", flag: "flags/italy.png", grandPrix: "FORMULA 1 PIRELLI GRAN PREMIO D'ITALIA 2024", link: "italy.html", circuitImage: "Raceweekends/italy-circuit.jpg" },
+                { round: "ROUND 17", date: "13-15 SEP", country: "Azerbaijan", flag: "flags/azerbaijan.png", grandPrix: "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2024", link: "azerbaijan.html", circuitImage: "Raceweekends/azerbaijan-circuit.jpg" },
+                { round: "ROUND 18", date: "20-22 SEP", country: "Singapore", flag: "flags/singapore.png", grandPrix: "FORMULA 1 SINGAPORE GRAND PRIX 2024", link: "singapore.html", circuitImage: "Raceweekends/singapore-circuit.jpg" },
+                { round: "ROUND 19", date: "04-06 OCT", country: "USA", flag: "flags/usa.png", grandPrix: "FORMULA 1 UNITED STATES GRAND PRIX 2024", link: "usa.html", circuitImage: "Raceweekends/usa-circuit.jpg" },
+                { round: "ROUND 20", date: "18-20 OCT", country: "Mexico", flag: "flags/mexico.png", grandPrix: "FORMULA 1 MEXICO CITY GRAND PRIX 2024", link: "mexico.html", circuitImage: "Raceweekends/mexico-circuit.jpg" },
+                { round: "ROUND 21", date: "01-03 NOV", country: "Brazil", flag: "flags/brazil.png", grandPrix: "FORMULA 1 SAO PAULO GRAND PRIX 2024", link: "brazil.html", circuitImage: "Raceweekends/brazil-circuit.jpg" },
+                { round: "ROUND 22", date: "16-18 NOV", country: "Las Vegas", flag: "flags/usa.png", grandPrix: "FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2024", link: "lasvegas.html", circuitImage: "Raceweekends/lasvegas-circuit.jpg" },
+                { round: "ROUND 23", date: "29-01 NOV-DEC", country: "Qatar", flag: "flags/qatar.png", grandPrix: "FORMULA 1 QATAR GRAND PRIX 2024", link: "qatar.html", circuitImage: "Raceweekends/qatar-circuit.jpg" },
+                { round: "ROUND 24", date: "06-08 DEC", country: "Abu Dhabi", flag: "flags/abudhabi.png", grandPrix: "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2024", link: "abudhabi.html", circuitImage: "Raceweekends/abudhabi-circuit.jpg" }
         ];
     
         const raceContainer = document.getElementById("raceContainer");
