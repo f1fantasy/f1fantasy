@@ -271,9 +271,9 @@
     <div class="article-container">
         <div class="article-group">
             <article class="article">
-                <h2>Monaco GP</h2>
+                <h2>Canada GP</h2>
                 <p>Check out the race results.</p>
-                <a href="monaco.html">Read More</a>
+                <a href="canada.html">Read More</a>
             </article>
 
             <article class="article">
@@ -291,9 +291,9 @@
             </article>
 
             <article class="article">
-                <h2>Canada GP</h2>
-                <p>Learn more about the Canada GP and times.</p>
-                <a href="canada.html">Read More</a>
+                <h2>Spain GP</h2>
+                <p>Learn more about the Spain GP and times.</p>
+                <a href="spain.html">Read More</a>
             </article>
         </div>
     </div>
@@ -301,23 +301,6 @@
       <hr style="margin: 50px 0px; background: red; width: 30%;">
 
 
-    <div class="container">
-      <h2>Driver Standings 2024</h2>
-      <p>Leaderboard:</p>            
- 
-      <table class="table leaderboard">
-        <thead>
-          <tr class="location-tags">
-            <th>Place</th>
-            <th>Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody id="leaderboardBody">
-          <!-- Leaderboard data will be appended here -->
-        </tbody>
-      </table>
-    </div>
 
 
 <p style="margin-top: 50px; color: red;">© 2024 F1 Fantasy | Offical F1 Fantasy Game</p>
@@ -326,50 +309,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-  // Sample data for leaderboard (you can replace this with your own data)
-  const leaderboardData = [
-    { name: 'Max Verstappen #1 (Red Bull)', points: 141 },
-    { name: 'Sergio Perez #11 (Red Bull)', points: 75 },
-    { name: 'Lewis Hamilton #44 (Mercedes)', points: 27 },
-    { name: 'George Russell #63 (Mercedes)', points: 37 },
-    { name: 'Charles Leclerc #16 (Ferrari)', points: 116 },
-    { name: 'Carlos Sainz #55 (Ferrari)', points: 83 },
-    { name: 'Lando Norris #4 (Mclaren)', points: 80 },
-    { name: 'Oscar Piastri #81 (Mclaren)', points: 58 },
-    { name: 'Fernando Alonso #14 (Aston Martin)', points: 24 },
-    { name: 'Lance Stroll #18 (Aston Martin)', points: 9 },
-    { name: 'Esteban Ocon #31 (Alpine)', points: 1 },
-    { name: 'Pierre Gasly #10 (Alpine)', points: 1 },
-    { name: 'Alexander Albon #23 (Williams)', points: 2 },
-    { name: 'Logan Sargent #2 (Williams)', points: 0 },
-    { name: 'Daniel Ricciardo #3 (RB)', points: 5 },
-    { name: 'Yuki Tsunoda #22 (RB)', points: 17 },
-    { name: 'GUANYU ZHOU #24 (Kick Sauber)', points: 0 },
-    { name: 'Valterri Bottas #77 (Kick Sauber)', points: 0 },
-    { name: 'Kevin Magnussen #20 (Haas)', points: 1 },
-    { name: 'Nico Hulkenberg #27 (Haas)', points: 5 },
-    { name: 'Ollie Bearman #38 (Ferrari)', points: 6 },
-    { name: 'Liam Lawson (Red Bull)', points: 0 },
-    { name: 'Theo Pourchaire (Kick Sauber)', points: 0 },
-    { name: 'Mick Schumacher (Mercedes)', points: 0 },
-  ];
-
-  // Sort leaderboard data by points
-  leaderboardData.sort((a, b) => b.points - a.points);
-
-  // Render leaderboard
-  const leaderboardBody = document.getElementById('leaderboardBody');
-  leaderboardData.forEach((player, index) => {
-    const row = `<tr ${index < 3 ? 'class="top-three"' : ''}>
-                  <td>${index + 1}</td>
-                  <td>${player.name}</td>
-                  <td>${player.points}</td>
-                </tr>`;
-    leaderboardBody.innerHTML += row;
-  });
-</script>
 <script>
   // Set the date we're counting down to
   var countDownDate = new Date("June 09, 2024 20:00:00").getTime();

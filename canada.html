@@ -256,53 +256,56 @@
         </table>
       </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <script>
-    // Race weekend leaderboard data
-    const leaderboardDataRace = [
-      { name: 'Max Verstappen #1 (Red Bull)', points: 0 },
-      { name: 'Sergio Perez #11 (Red Bull)', points: 0 },
-      { name: 'Lewis Hamilton #44 (Mercedes)', points: 0 },
-      { name: 'George Russell #63 (Mercedes)', points: 0 },
-      { name: 'Charles Leclerc #16 (Ferrari)', points: 0 },
-      { name: 'Carlos Sainz #55 (Ferrari)', points: 0 },
-      { name: 'Lando Norris #4 (Mclaren)', points: 0 },
-      { name: 'Oscar Piastri #81 (Mclaren)', points: 0 },
-      { name: 'Fernando Alonso #14 (Aston Martin)', points: 0 },
-      { name: 'Lance Stroll #18 (Aston Martin)', points: 0 },
-      { name: 'Esteban Ocon #31 (Alpine)', points: 0 },
-      { name: 'Pierre Gasly #10 (Alpine)', points: 0 },
-      { name: 'Alexander Albon #23 (Williams)', points: 0 },
-      { name: 'Logan Sargent #2 (Williams)', points: 0 },
-      { name: 'Daniel Ricciardo #3 (RB)', points: 0 },
-      { name: 'Yuki Tsunoda #22 (RB)', points: 0 },
-      { name: 'GUANYU ZHOU #24 (Kick Sauber)', points: 0 },
-      { name: 'Valterri Bottas #77 (Kick Sauber)', points: 0 },
-      { name: 'Kevin Magnussen #20 (Haas)', points: 0 },
-      { name: 'Nico Hulkenberg #27 (Haas)', points: 0 },
-    ];
 
-    // Name of the driver with the fastest lap
-    const fastestLapDriverName = ''; // Ändra detta värde för att tilldela snabbast varv till en annan förare
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    // Sort leaderboard data by points
-    leaderboardDataRace.sort((a, b) => b.points - a.points);
+<script>
+  // Race weekend leaderboard data
+  const leaderboardDataRace = {
+    'Max Verstappen': 25,
+    'Sergio Perez': 0,
+    'Charles Leclerc': 0,
+    'Carlos Sainz': 0,
+    'Lando Norris': 18,
+    'Oscar Piastri': 10,
+    'Lewis Hamilton': 13,
+    'George Russell': 18,
+    'Fernando Alonso': 8,
+    'Lance Stroll': 6,
+    'Nico Hulkenberg': 0,
+    'Kevin Magnussen': 0,
+    'Daniel Ricciardo': 4,
+    'Yuki Tsunoda': 0,
+    'Pierre Gasly': 2,
+    'Esteban Ocon': 1,
+    'Valtteri Bottas': 0,
+    'GUANYU ZHOU': 0,
+    'Logan Sargent': 0,
+    'Alexander Albon': 0,
+  };
 
-    // Render leaderboard
-    const leaderboardBodyRace = document.getElementById('leaderboardBodyRace');
-    leaderboardDataRace.forEach((player, index) => {
-      const isFastestLap = player.name === fastestLapDriverName;
-      const row = `<tr ${index < 3 ? 'class="top-three"' : ''}>
-                    <td>${index + 1}</td>
-                    <td>${player.name}${isFastestLap ? ' <i class="fas fa-clock clock-icon clock-lap"></i>' : ''}</td>
-                    <td>${player.points}</td>
-                  </tr>`;
-      leaderboardBodyRace.innerHTML += row;
-    });
-  </script>
+  // Name of the driver with the fastest lap
+  const fastestLapDriverName = 'Lewis Hamilton';
+
+  // Sort leaderboard data by points
+  const sortedLeaderboardRace = Object.entries(leaderboardDataRace)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10); // Endast de topp 10
+
+  // Render leaderboard
+  const leaderboardBodyRace = document.getElementById('leaderboardBodyRace');
+  sortedLeaderboardRace.forEach((driver, index) => {
+    const isFastestLap = driver[0] === fastestLapDriverName;
+    const row = `<tr ${index < 3 ? 'class="top-three"' : ''}>
+                  <td>${index + 1}</td>
+                  <td>${driver[0]}${isFastestLap ? ' <i class="fas fa-clock clock-icon clock-lap"></i>' : ''}</td>
+                  <td>${driver[1]}</td>
+                </tr>`;
+    leaderboardBodyRace.innerHTML += row;
+  });
+</script>
 </body>
 </html>
