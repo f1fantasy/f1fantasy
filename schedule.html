@@ -16,6 +16,7 @@
             overflow: hidden;
             transition: border-color 0.5s; /* Lägg till övergång för border-färg */
             height: 350px;
+            min-width: 270px;
         }
         .card:hover {
             border-color: #dc3545; /* Ändra border-färgen till röd när man hoverar över kortet */
@@ -102,7 +103,7 @@
             border-radius: 10px;
             font-size: 12px;
             font-weight: bolder;
-            max-width: 300px;
+            max-width: 400px;
             z-index: 3;
         }
         .schedule-overlay h5 {
@@ -181,26 +182,24 @@
             <div class="row">
                 <div class="col-md-4 race-info">
                     <a href="canada.html">
-                        <h2 style="color:#fff;">CANADA 2024  <span><img src="flags/canada.png" style="height: 30px;" alt="Canada Flag"></span></h2>
+                        <h2 style="color:#fff;">SPAIN 2024  <span><img src="flags/spain.png" style="height: 30px;" alt="Canada Flag"></span></h2>
                     </a
                     <hr style="margin: 20px 0px; background-color: white;">
                     <h3>07 - 09 juni</h3>
                     <hr style="margin: 20px 0px; background-color: white;">
                     <div class="race-layout">
-                        <img src="Raceweekends/canada-circuit.jpg" alt="Bana Layout">
+                        <img src="Raceweekends/spain-circuit.jpg" alt="Bana Layout">
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="jumbotron">
-                        <img src="Raceweekends/canada-jumbo.jpg" class="race-image" alt="Race Schema">
-                        <div class="schedule-overlay">
+                        <img src="Raceweekends/spain-jumbo.jpg" class="race-image" alt="Race Schema">
+                        <div class="schedule-overlay" style="text-align: left;">
                             <h5>Race Schedule</h5>
-                            <p>PRACTICE 1: FRI 19:30 - 20:30</p>
-                            <p>PRACTICE 2: FRI 23:00 - 00:00</p>
-                            <p>PRACTICE 3: SAT 18:30 - 19:30</p>
-                            <p>QUALIFYING: SAT 22:00 - 23:00</p>
-                            <p>RACE: SUN 20:00</p>
-                            <p><small>Times displayed are track times</small></p>
+                            <p>Friday: FP1, FP2</p>
+                            <p>Saturday: FP3, QUALIFYING</p>
+                            <p>Sunday: RACE</p>
+                            <a>Click here for complete guide thru the GRAND PRIX</a>
                         </div>
                     </div>
                 </div>
@@ -221,6 +220,7 @@
                 { round: "ROUND 6", date: "03-05 MAY", country: "Miami", flag: "flags/usa.png", grandPrix: "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2024", winnerImage: "drivers/norris.jpg" },
                 { round: "ROUND 7", date: "17-19 MAY", country: "Emilia-Romagna", flag: "flags/italy.png", grandPrix: "FORMULA 1 MSC CRUISES GRAN PREMIO DEL MADE IN ITALY E DELL'EMILIA-ROMAGNA 2024", winnerImage: "drivers/verstappen.jpg" },
                 { round: "ROUND 8", date: "24-26 MAY", country: "Monaco", flag: "flags/monaco.png", grandPrix: "FORMULA 1 GRAND PRIX DE MONACO 2024", winnerImage: "drivers/leclerc.jpg" },
+                { round: "ROUND 9", date: "07-09 JUN", country: "Canada", flag: "flags/canada.png", grandPrix: "FORMULA 1 AWS GRAND PRIX DU CANADA 2024", winnerImage: "drivers/verstappen.jpg" },
                 // Add more finished races as needed
             ];
 
@@ -256,7 +256,6 @@
 
 
         const races = [
-                { round: "ROUND 10", date: "21-23 JUN", country: "Spain", flag: "flags/spain.png", grandPrix: "FORMULA 1 ARAMCO GRAN PREMIO DE ESPAÑA 2024", link: "spain.html", circuitImage: "Raceweekends/spain-circuit.jpg" },
                 { round: "ROUND 11", date: "28-30 JUN", country: "Austria", flag: "flags/austria.png", grandPrix: "FORMULA 1 QATAR AIRWAYS AUSTRIAN GRAND PRIX 2024", link: "austria.html", circuitImage: "Raceweekends/austria-circuit.jpg" },
                 { round: "ROUND 12", date: "05-07 JUL", country: "Great Britain", flag: "flags/greatbritain.png", grandPrix: "FORMULA 1 QATAR AIRWAYS BRITISH GRAND PRIX 2024", link: "greatbritain.html", circuitImage: "Raceweekends/greatbritain-circuit.jpg" },
                 { round: "ROUND 13", date: "19-21 JUL", country: "Hungary", flag: "flags/hungary.png", grandPrix: "FORMULA 1 HUNGARIAN GRAND PRIX 2024", link: "hungary.html", circuitImage: "Raceweekends/hungary-circuit.jpg" },
