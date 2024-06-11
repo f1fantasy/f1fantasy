@@ -10,118 +10,161 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="grund.css">
   <style type="text/css">
-        .card {
-            border: 1px solid #ccc; /* Ändra färgen på korts gräns */
-            border-radius: 8px;
-            overflow: hidden;
-            transition: border-color 0.5s; /* Lägg till övergång för border-färg */
-            height: 350px;
-            min-width: 270px;
-        }
-        .card:hover {
-            border-color: #dc3545; /* Ändra border-färgen till röd när man hoverar över kortet */
-            text-decoration: none !important;
-        }
-        .card-body {
-            padding: 10px;
-            background-color: #f8f9fa; /* Lägg till en ljus bakgrundsfärg */
-        }
-        .round-title,
-        .grand-prix,
-        .date-title {
-            color: #000000; /* Ändra textfärgen till svart */
-        }
-        .round-title,
-        .date-title {
-            font-weight: bolder; /* Behåll textens fetstil */
-            font-size: large;
-        }
+    .card {
+        border: 1px solid #ccc; 
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.5s; 
+        height: 350px;
+        min-width: 270px;
+    }
+    .card:hover {
+        border-color: #dc3545;
+        text-decoration: none !important;
+    }
+    .card-body {
+        padding: 10px;
+        background-color: #f8f9fa;
+    }
+    .round-title,
+    .grand-prix,
+    .date-title {
+        color: #000000;
+    }
+    .round-title,
+    .date-title {
+        font-weight: bolder; 
+        font-size: large;
+    }
 
-        .grand-prix {
-            font-size: small;
-            font-weight: bolder;
-        }
+    .grand-prix {
+        font-size: small;
+        font-weight: bolder;
+    }
 
-        .country-name {
-            color: red;
-            font-size: large;
-            font-weight: bolder;
-        }
+    .country-name {
+        color: red;
+        font-size: large;
+        font-weight: bolder;
+    }
 
-        .country-flag {
-            width: 40px;
-            border-radius: 10px;
-        }
+    .country-flag {
+        width: 40px;
+        border-radius: 10px;
+    }
 
-        .race-section {
-            background-color: black;
-            color: white;
-            padding: 20px 0;
-            position: relative;
-            margin: 40px 0px;
-            border-radius: 0px 20px 0px 0px;
-        }
-        .race-border {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 0px 20px 0px 0px;
-            border: 10px solid transparent;
-            border-top-color: red;
-            border-right-color: red;
-            z-index: 1;
-        }
-        .jumbotron {
-            background: none;
-            padding: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .race-image {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-        }
-        .race-info {
-            padding: 20px;
-            z-index: 2;
-            position: relative;
-        }
-        .race-layout img {
-            max-width: 300px;
-            height: auto;
-        }
-        .schedule-overlay {
-            position: absolute;
-            top: 10%;
-            right: 5%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 12px;
-            font-weight: bolder;
-            max-width: 400px;
-            z-index: 3;
-        }
-        .schedule-overlay h5 {
-            margin-bottom: 10px;
-        }
-        .schedule-overlay p {
-            margin: 5px 0;
-        }
-        
-        .winner img {
-            height: 160px;
-            border: 10px solid transparent;
-            border-bottom-color: red;
-        }
+    .race-section {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+        position: relative;
+        margin: 40px 0px;
+        border-radius: 0px 20px 0px 0px;
+    }
+    .race-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px 20px 0px 0px;
+        border: 10px solid transparent;
+        border-top-color: red;
+        border-right-color: red;
+        z-index: 1;
+    }
+    .jumbotron {
+        background: none;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+    }
+    .race-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+    .race-info {
+        padding: 20px;
+        z-index: 2;
+        position: relative;
+    }
+    .race-layout img {
+        max-width: 300px;
+        height: auto;
+    }
+    .schedule-overlay {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: bolder;
+        max-width: 400px;
+        z-index: 3;
+    }
+    .schedule-overlay h5 {
+        margin-bottom: 10px;
+    }
+    .schedule-overlay p {
+        margin: 5px 0;
+    }
+    
+    .winner img {
+        height: 160px;
+        border: 10px solid transparent;
+        border-bottom-color: red;
+    }
 
-        a:hover {
-            text-decoration: none;
-        }
+    a:hover {
+        text-decoration: none;
+    }
+    
+    /* Calendar Button and Panel Styles */
+    #calendarButton {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 5px 0 0 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    #calendarPanel {
+        position: fixed;
+        right: -30%;
+        top: 0;
+        width: 30%;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    #calendarPanel.active {
+        right: 0;
+    }
+
+    .calendar-header {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .calendar-content {
+        padding: 20px;
+    }
 </style>
 </head>
 <body>
@@ -208,6 +251,23 @@
     </section>
     <div class="container">
         <div class="row" id="raceContainer"></div>
+    </div>
+
+    <button id="calendarButton"><i class="fas fa-calendar-alt"></i></button>
+    <div id="calendarPanel">
+        <div class="calendar-header">
+            <h3>Race Calendar</h3>
+        </div>
+        <div class="calendar-content">
+            <!-- Add your calendar content here -->
+            <p>JUNE 28-31, 2024 - AUSTRIA</p>
+            <p>JULY 05-07, 2024 - GREAT BRITAIN</p>
+            <p>JULY 19-21 JUL, 2024 - HUNGARY</p>
+            <p>JULY 26-28 JUL, 2024 - BELGIUM</p>
+            <p>AUGUST 23-25 JUL, 2024 - NETHERLANDS</p>
+            <p>AUG - SEP 30-01 JUL, 2024 - ITALY</p>
+            <!-- Add more race dates as needed -->
+        </div>
     </div>
     <script>
 
@@ -301,6 +361,17 @@
             currentRow.appendChild(card);
         });
     </script>
+        <script>
+            // JavaScript to toggle calendar panel
+            document.getElementById('calendarButton').addEventListener('click', function () {
+                var calendarPanel = document.getElementById('calendarPanel');
+                if (calendarPanel.classList.contains('active')) {
+                    calendarPanel.classList.remove('active');
+                } else {
+                    calendarPanel.classList.add('active');
+                }
+            });
+        </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
